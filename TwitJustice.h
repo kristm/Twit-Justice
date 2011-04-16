@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface TwitJustice : NSObject {
+	NSOperationQueue *queue;	
     NSWindow *window;
 	NSStatusItem *_statusItem;
 	IBOutlet NSMenu	*menuItemMenu;
