@@ -1,5 +1,5 @@
 //
-//  TwitJusticeAppDelegate.m
+//  TwitJustice.m
 //  TwitJustice
 //
 //  Created by Krist Menina on 4/16/11.

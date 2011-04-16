@@ -1,5 +1,5 @@
 //
-//  TwitJusticeAppDelegate.h
+//  TwitJustice.h
 //  TwitJustice
 //
 //  Created by Krist Menina on 4/16/11.
