@@ -1,0 +1,263 @@
+TTwitJustice
+v7
+r0
+t324625220.943878
+cCheck dependencies
+cProcessInfoPlistFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Info.plist TwitJustice-Info.plist
+cCopyStringsFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib
+cCopyTiffFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/smile.tiff smile.tiff
+cProcessPCH /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch.gch TwitJustice_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/main.o /Users/chrismenina/src/cocoa/TwitJustice/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.o /Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice normal i386
+cTouch /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004B99A23900000000000000EE
+t1268359737
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/Users/chrismenina/src/cocoa/TwitJustice/English.lproj/InfoPlist.strings
+c000000004DA9270F000000000000002D
+t1302931215
+s45
+
+N/Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib
+c000000004DA92BB5000000000002DCF6
+t1302932405
+s187638
+
+N/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.h
+c000000004DA92B910000000000000180
+t1302932369
+s384
+i<Cocoa/Cocoa.h>
+
+N/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m
+c000000004DA92B48000000000000034B
+t1302932296
+s843
+i"TwitJustice.h"
+
+N/Users/chrismenina/src/cocoa/TwitJustice/TwitJusticeAppDelegate.h
+c000000004DA9270F0000000000000148
+t1302931215
+s328
+i<Cocoa/Cocoa.h>
+
+N/Users/chrismenina/src/cocoa/TwitJustice/TwitJusticeAppDelegate.m
+c000000004DA9270F0000000000000181
+t1302931215
+s385
+i"TwitJusticeAppDelegate.h"
+
+N/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice_Prefix.pch
+c000000004DA9270F0000000000000099
+t1302931215
+s153
+i<Cocoa/Cocoa.h>
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app
+t1302932420
+s102
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Info.plist
+t1302932413
+s932
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice
+t1302932420
+s14208
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/PkgInfo
+t1302932413
+s8
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1302932413
+s92
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/MainMenu.nib
+t1302932413
+s36114
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/smile.tiff
+t1302932413
+s29292
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.LinkFileList
+c000000004DA92BBD00000000000000EF
+t1302932413
+s239
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.o
+t1302932420
+s16228
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJusticeAppDelegate.o
+t2
+s0
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/main.o
+t1302932420
+s4860
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/x86_64/TwitJustice.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/x86_64/TwitJusticeAppDelegate.o
+t2
+s0
+
+N/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/chrismenina/src/cocoa/TwitJustice/main.m
+c000000004DA927100000000000000102
+t1302931216
+s258
+i<Cocoa/Cocoa.h>
+
+N/Users/chrismenina/src/cocoa/TwitJustice/smile.tiff
+c000000004B66DD8A000000000000726C
+t1265032586
+s29292
+
+N/var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch.gch
+t1302932420
+s56903472
+
+N/var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-ckndmkfutrvcmkhidhmjimgxmyvr/TwitJustice_Prefix.pch.gch
+t2
+s0
+
+NTwitJustice-Info.plist
+c000000004DA927A8000000000000040C
+t1302931368
+s1036
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies324625213#324625213#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.o /Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s324625220.342108
+e324625220.588522
+r1
+xCompileC
+xbuild/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.o
+x/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m324625220#324625220#0(0"0(0#0#54"/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m4300911832#1560"    cd /Users/chrismenina/src/cocoa/TwitJustice    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-generated-files.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-own-target-headers.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-all-target-headers.hmap -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-project-headers.hmap -F/Users/chrismenina/src/cocoa/TwitJustice/build/Debug -I/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/include -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources/i386 -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources -include /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch -c /Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.m -o /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.o0#
+
+CCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJusticeAppDelegate.o /Users/chrismenina/src/cocoa/TwitJustice/TwitJusticeAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/main.o /Users/chrismenina/src/cocoa/TwitJustice/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s324625220.340777
+e324625220.553423
+r1
+xCompileC
+xbuild/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/main.o
+x/Users/chrismenina/src/cocoa/TwitJustice/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@55"Compile /Users/chrismenina/src/cocoa/TwitJustice/main.m324625220#324625220#0(0"0(0#0#47"/Users/chrismenina/src/cocoa/TwitJustice/main.m4300911832#1546"    cd /Users/chrismenina/src/cocoa/TwitJustice    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-generated-files.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-own-target-headers.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-all-target-headers.hmap -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-project-headers.hmap -F/Users/chrismenina/src/cocoa/TwitJustice/build/Debug -I/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/include -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources/i386 -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources -include /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch -c /Users/chrismenina/src/cocoa/TwitJustice/main.m -o /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/main.o0#
+
+CCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/x86_64/TwitJusticeAppDelegate.o /Users/chrismenina/src/cocoa/TwitJustice/TwitJusticeAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/x86_64/main.o /Users/chrismenina/src/cocoa/TwitJustice/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileXIB /Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib
+s324625213.225020
+e324625213.828085
+r1
+xCompileXIB
+x/Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib324625213#324625213#0(0"0(0#0#67"/Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib4300911832#337"    cd /Users/chrismenina/src/cocoa/TwitJustice    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/MainMenu.nib /Users/chrismenina/src/cocoa/TwitJustice/English.lproj/MainMenu.xib0#
+
+CCopyStringsFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s324625213.223819
+e324625213.281334
+r1
+xCopyStringsFile
+x/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings324625213#324625213#0(0"0(0#0#72"/Users/chrismenina/src/cocoa/TwitJustice/English.lproj/InfoPlist.strings4300911832#373"    cd /Users/chrismenina/src/cocoa/TwitJustice    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/English.lproj0#
+
+CCopyTiffFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/smile.tiff smile.tiff
+s324625213.281453
+e324625213.322513
+r1
+xCopyTiffFile
+x/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources/smile.tiff
+xsmile.tiff
+lSLF07#2@15"Copy smile.tiff324625213#324625213#0(0"0(0#0#51"/Users/chrismenina/src/cocoa/TwitJustice/smile.tiff4300911832#246"    cd /Users/chrismenina/src/cocoa/TwitJustice    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff smile.tiff --outdir /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Resources0#
+
+CLd /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice normal i386
+s324625220.588641
+e324625220.939689
+r1
+xLd
+x/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice
+xnormal
+xi386
+lSLF07#2@100"Link /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice324625220#324625220#0(0"0(0#0#0"4300911832#568"    cd /Users/chrismenina/src/cocoa/TwitJustice    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/chrismenina/src/cocoa/TwitJustice/build/Debug -F/Users/chrismenina/src/cocoa/TwitJustice/build/Debug -filelist /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/Objects-normal/i386/TwitJustice.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice0#
+
+CLd /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/MacOS/TwitJustice normal x86_64
+r0
+
+CProcessInfoPlistFile /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Info.plist TwitJustice-Info.plist
+s324625213.219575
+e324625213.223710
+r1
+xProcessInfoPlistFile
+x/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Info.plist
+xTwitJustice-Info.plist
+lSLF07#2@30"Process TwitJustice-Info.plist324625213#324625213#0(0"0(0#0#63"/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice-Info.plist4300911832#328"    cd /Users/chrismenina/src/cocoa/TwitJustice    builtin-infoPlistUtility TwitJustice-Info.plist -genpkginfo /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch.gch TwitJustice_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s324625213.828262
+e324625220.340500
+r1
+xProcessPCH
+x/var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch.gch
+xTwitJustice_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@33"Precompile TwitJustice_Prefix.pch324625213#324625220#0(0"0(0#0#63"/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice_Prefix.pch4300911832#1448"    cd /Users/chrismenina/src/cocoa/TwitJustice    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-generated-files.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-own-target-headers.hmap -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-all-target-headers.hmap -iquote /Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/TwitJustice-project-headers.hmap -F/Users/chrismenina/src/cocoa/TwitJustice/build/Debug -I/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/include -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources/i386 -I/Users/chrismenina/src/cocoa/TwitJustice/build/TwitJustice.build/Debug/TwitJustice.build/DerivedSources -c /Users/chrismenina/src/cocoa/TwitJustice/TwitJustice_Prefix.pch -o /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-cfslamcqquxtxhboyufntsejosyu/TwitJustice_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/bl/blR3FREbFMOO1sa+zmjWz++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TwitJustice_Prefix-ckndmkfutrvcmkhidhmjimgxmyvr/TwitJustice_Prefix.pch.gch TwitJustice_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CTouch /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app
+s324625220.939792
+e324625220.943799
+r1
+xTouch
+x/Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app
+lSLF07#2@74"Touch /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app324625220#324625220#0(0"0(0#0#0"4300911832#139"    cd /Users/chrismenina/src/cocoa/TwitJustice    /usr/bin/touch -c /Users/chrismenina/src/cocoa/TwitJustice/build/Debug/TwitJustice.app0#
+
