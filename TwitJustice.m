@@ -31,31 +31,32 @@
 	[center addObserver:self 
 			   selector:@selector(machineWillSleep:)
 				   name:NSWorkspaceWillSleepNotification 
-				 object:NULL];		
-	
+				 object:NULL];			
+	[self startTwitJustice:@"starting"];
+}
+
+- (void) startTwitJustice:(NSString *)fpath{
+	NSLog(@"starttwitjustice %@",fpath);
 	[queue cancelAllOperations];
 	TwitReader* twitreader = [[TwitReader alloc] initWithRootPath:@"meow" operationClass:nil queue:queue];
 	[queue addOperation: twitreader];
-	[twitreader release];
-	
+	[twitreader release];		
 }
 
 - (void) machineWillSleep:(NSNotification *)notification{
 	NSLog(@"TwitJustice sleep");
-	/*[NSObject cancelPreviousPerformRequestsWithTarget: self
+    [NSObject cancelPreviousPerformRequestsWithTarget: self
 											 selector:@selector(startTwitJustice:)
-											   object:fullPath];
+											   object:@"stoping before sleeping"];
 	[queue cancelAllOperations];	
-	[timer invalidate];
-	[self setTimer:nil];*/	
+
 }
 
 - (void) machineDidWake:(NSNotification *)notification{
-	NSLog(@"TwitJustice wake");
-	
-	/*[self performSelector: @selector(startTwitJustice:)
-			   withObject:fullPath
-			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];*/
+	NSLog(@"TwitJustice wake");	
+	[self performSelector: @selector(startTwitJustice:)
+			   withObject:@"start from wake"
+			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];
 }
 
 
@@ -63,9 +64,7 @@
 {
 	if (_statusItem == nil)
 	{
-		
-		NSImage *img;		
-		
+		NSImage *img;				
 		img = [NSImage imageNamed:@"twitjustice"];
 		_statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[_statusItem setImage:img];
@@ -77,8 +76,11 @@
 	return _statusItem;
 }
 
-- (void) actionQuit:(id)sender {
-	[NSApp terminate:sender];
+- (IBAction) prefWindowController: (id) sender
+{
+	[prefWindow setLevel:NSStatusWindowLevel];
+	[prefWindow makeKeyAndOrderFront:nil];
+	[prefWindow center];	
 }
 
 @end

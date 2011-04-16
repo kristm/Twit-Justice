@@ -13,9 +13,10 @@
     NSWindow *window;
 	NSStatusItem *_statusItem;
 	IBOutlet NSMenu	*menuItemMenu;
+	IBOutlet NSWindow *prefWindow;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-- (void)actionQuit:(id)sender;
+- (IBAction) prefWindowController: (id) sender;
 
 @end

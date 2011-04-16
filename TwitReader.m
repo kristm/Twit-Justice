@@ -28,10 +28,13 @@
 - (void)main
 {
 	NSLog(@"twit reader main");
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
-		NSLog(@"twit loop");
+		if([self isCancelled]) break;
+		NSLog(@"twit loop %@",self);
 		sleep(5);
 	}
+	[pool release];	
 }
 
 @end
