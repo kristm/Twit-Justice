@@ -2,16 +2,16 @@
 {
 	256AC3D80F4B6AC300CF3369 /* TwitJustice.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {622, 286}}";
-			sepNavSelRange = "{18, 0}";
-			sepNavVisRange = "{0, 395}";
+			sepNavIntBoundsRect = "{{0, 0}, {706, 299}}";
+			sepNavSelRange = "{167, 0}";
+			sepNavVisRange = "{21, 428}";
 		};
 	};
 	256AC3D90F4B6AC300CF3369 /* TwitJustice.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {666, 1105}}";
-			sepNavSelRange = "{851, 0}";
-			sepNavVisRange = "{739, 521}";
+			sepNavIntBoundsRect = "{{0, 0}, {666, 1326}}";
+			sepNavSelRange = "{994, 0}";
+			sepNavVisRange = "{800, 425}";
 			sepNavWindowFrame = "{{15, 106}, {1152, 667}}";
 		};
 	};
@@ -47,7 +47,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					444,
+					528,
 					20,
 					48,
 					43,
@@ -110,19 +110,17 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 324655179;
-			PBXWorkspaceStateSaveDate = 324655179;
+			PBXPerProjectTemplateStateSaveDate = 324688049;
+			PBXWorkspaceStateSaveDate = 324688049;
 		};
 		perUserProjectItems = {
-			5B3781471359D7D900C77142 = 5B3781471359D7D900C77142 /* PBXTextBookmark */;
-			5B3781481359D7D900C77142 = 5B3781481359D7D900C77142 /* PBXTextBookmark */;
-			5B3781491359D7D900C77142 = 5B3781491359D7D900C77142 /* PBXTextBookmark */;
-			5B37814A1359D7D900C77142 = 5B37814A1359D7D900C77142 /* PBXTextBookmark */;
-			5B3781621359D81300C77142 = 5B3781621359D81300C77142 /* PBXTextBookmark */;
-			5B6CB4F3135977E5002955AF = 5B6CB4F3135977E5002955AF /* PlistBookmark */;
-			5B6CB4F4135977E5002955AF = 5B6CB4F4135977E5002955AF /* PBXBookmark */;
-			5BC4308E1359D853008F4246 /* PBXTextBookmark */ = 5BC4308E1359D853008F4246 /* PBXTextBookmark */;
-			5BC430971359D8F9008F4246 /* PBXTextBookmark */ = 5BC430971359D8F9008F4246 /* PBXTextBookmark */;
+			5B6CB4F3135977E5002955AF /* PlistBookmark */ = 5B6CB4F3135977E5002955AF /* PlistBookmark */;
+			5B6CB4F4135977E5002955AF /* PBXBookmark */ = 5B6CB4F4135977E5002955AF /* PBXBookmark */;
+			5B745C02135A696C0086C439 /* PBXTextBookmark */ = 5B745C02135A696C0086C439 /* PBXTextBookmark */;
+			5B745C03135A696C0086C439 /* PBXTextBookmark */ = 5B745C03135A696C0086C439 /* PBXTextBookmark */;
+			5B745C04135A696C0086C439 /* PBXTextBookmark */ = 5B745C04135A696C0086C439 /* PBXTextBookmark */;
+			5B745C05135A696C0086C439 /* PBXTextBookmark */ = 5B745C05135A696C0086C439 /* PBXTextBookmark */;
+			5B745C06135A696C0086C439 /* PBXTextBookmark */ = 5B745C06135A696C0086C439 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 5B087CF813595EAE0096C05E /* Source Control */;
 		userBuildSettings = {
@@ -172,56 +170,6 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	5B3781471359D7D900C77142 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
-		name = "TwitJustice.m: 2";
-		rLen = 0;
-		rLoc = 18;
-		rType = 0;
-		vrLen = 324;
-		vrLoc = 0;
-	};
-	5B3781481359D7D900C77142 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
-		name = "TwitJustice.h: 2";
-		rLen = 0;
-		rLoc = 18;
-		rType = 0;
-		vrLen = 395;
-		vrLoc = 0;
-	};
-	5B3781491359D7D900C77142 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B6CB5021359BD2A002955AF /* TwitReader.h */;
-		name = "TwitReader.h: 12";
-		rLen = 11;
-		rLoc = 193;
-		rType = 0;
-		vrLen = 354;
-		vrLoc = 0;
-	};
-	5B37814A1359D7D900C77142 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */;
-		name = "TwitReader.m: 5";
-		rLen = 0;
-		rLoc = 78;
-		rType = 0;
-		vrLen = 355;
-		vrLoc = 0;
-	};
-	5B3781621359D81300C77142 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */;
-		name = "TwitReader.m: 5";
-		rLen = 0;
-		rLoc = 78;
-		rType = 0;
-		vrLen = 341;
-		vrLoc = 0;
-	};
 	5B6CB4F3135977E5002955AF /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* TwitJustice-Info.plist */;
@@ -239,38 +187,68 @@
 	};
 	5B6CB5021359BD2A002955AF /* TwitReader.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {622, 286}}";
-			sepNavSelRange = "{193, 11}";
-			sepNavVisRange = "{0, 354}";
+			sepNavIntBoundsRect = "{{0, 0}, {706, 273}}";
+			sepNavSelRange = "{229, 0}";
+			sepNavVisRange = "{0, 356}";
 			sepNavWindowFrame = "{{15, 106}, {1152, 667}}";
 		};
 	};
 	5B6CB5031359BD2A002955AF /* TwitReader.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {622, 520}}";
-			sepNavSelRange = "{78, 0}";
-			sepNavVisRange = "{0, 290}";
+			sepNavIntBoundsRect = "{{0, 0}, {706, 559}}";
+			sepNavSelRange = "{419, 8}";
+			sepNavVisRange = "{142, 333}";
 		};
 	};
-	5BC4308E1359D853008F4246 /* PBXTextBookmark */ = {
+	5B745C02135A696C0086C439 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */;
-		name = "TwitReader.m: 5";
+		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
+		name = "TwitJustice.m: 75";
 		rLen = 0;
-		rLoc = 78;
+		rLoc = 1943;
 		rType = 0;
-		vrLen = 316;
+		vrLen = 341;
 		vrLoc = 0;
 	};
-	5BC430971359D8F9008F4246 /* PBXTextBookmark */ = {
+	5B745C03135A696C0086C439 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */;
-		name = "TwitReader.m: 5";
-		rLen = 0;
-		rLoc = 78;
+		name = "TwitReader.m: 24";
+		rLen = 8;
+		rLoc = 419;
 		rType = 0;
-		vrLen = 290;
+		vrLen = 333;
+		vrLoc = 142;
+	};
+	5B745C04135A696C0086C439 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5B6CB5021359BD2A002955AF /* TwitReader.h */;
+		name = "TwitReader.h: 13";
+		rLen = 0;
+		rLoc = 229;
+		rType = 0;
+		vrLen = 356;
 		vrLoc = 0;
+	};
+	5B745C05135A696C0086C439 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
+		name = "TwitJustice.h: 2";
+		rLen = 0;
+		rLoc = 18;
+		rType = 0;
+		vrLen = 444;
+		vrLoc = 0;
+	};
+	5B745C06135A696C0086C439 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
+		name = "TwitJustice.h: 9";
+		rLen = 0;
+		rLoc = 167;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 21;
 	};
 	8D1107260486CEB800E47090 /* TwitJustice */ = {
 		activeExec = 0;

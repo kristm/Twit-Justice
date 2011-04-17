@@ -10,11 +10,11 @@
 
 
 @interface TwitReader : NSOperation {
-	NSString*			rootPath;
+	NSString*			twitData;
 	NSOperationQueue*	queue;	
 
 }
 
-- (id)initWithRootPath:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq;
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq;
 
 @end

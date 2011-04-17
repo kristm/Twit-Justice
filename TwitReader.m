@@ -11,17 +11,17 @@
 
 @implementation TwitReader
 
-- (id)initWithRootPath:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq
 {
     self = [super init];	
-	rootPath = [pp retain];
+	twitData = [pp retain];
 	return self;
 }
 
 - (void)dealloc
 {
 	NSLog(@"********** dealloc twitreader");
-    [rootPath release];
+    [twitData release];
     [super dealloc];
 }
 

@@ -31,7 +31,12 @@
 	[center addObserver:self 
 			   selector:@selector(machineWillSleep:)
 				   name:NSWorkspaceWillSleepNotification 
-				 object:NULL];			
+				 object:NULL];	
+	[center addObserver:self 
+			   selector:@selector(machineWillShutDown:)
+				   name:NSWorkspaceWillPowerOffNotification 
+				 object:NULL];	
+	
 	[self startTwitJustice:@"starting"];
 }
 
@@ -45,11 +50,13 @@
 
 - (void) machineWillSleep:(NSNotification *)notification{
 	NSLog(@"TwitJustice sleep");
-    [NSObject cancelPreviousPerformRequestsWithTarget: self
-											 selector:@selector(startTwitJustice:)
-											   object:@"stoping before sleeping"];
 	[queue cancelAllOperations];	
 
+}
+
+- (void) machineWillShutDown: (NSNotification *)notification{
+	NSLog(@"shutdown detected");
+	[queue cancelAllOperations];
 }
 
 - (void) machineDidWake:(NSNotification *)notification{
@@ -81,6 +88,16 @@
 	[prefWindow setLevel:NSStatusWindowLevel];
 	[prefWindow makeKeyAndOrderFront:nil];
 	[prefWindow center];	
+}
+
+- (void) dealloc
+{
+	NSLog(@"dealloc");
+	[[NSStatusBar systemStatusBar] removeStatusItem:_statusItem];
+	[_statusItem release];
+	[queue release];
+	queue = nil;
+	[super dealloc];	
 }
 
 @end
