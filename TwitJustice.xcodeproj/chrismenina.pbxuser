@@ -3,7 +3,7 @@
 	256AC3D80F4B6AC300CF3369 /* TwitJustice.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {706, 299}}";
-			sepNavSelRange = "{313, 0}";
+			sepNavSelRange = "{20, 0}";
 			sepNavVisRange = "{0, 449}";
 		};
 	};
@@ -110,8 +110,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 324909804;
-			PBXWorkspaceStateSaveDate = 324909804;
+			PBXPerProjectTemplateStateSaveDate = 325170132;
+			PBXWorkspaceStateSaveDate = 325170132;
 		};
 		perUserProjectItems = {
 			5B6CB4F3135977E5002955AF = 5B6CB4F3135977E5002955AF /* PlistBookmark */;
@@ -119,9 +119,9 @@
 			5B745C02135A696C0086C439 = 5B745C02135A696C0086C439 /* PBXTextBookmark */;
 			5B745C03135A696C0086C439 = 5B745C03135A696C0086C439 /* PBXTextBookmark */;
 			5B745C04135A696C0086C439 = 5B745C04135A696C0086C439 /* PBXTextBookmark */;
-			5B745C06135A696C0086C439 = 5B745C06135A696C0086C439 /* PBXTextBookmark */;
-			5BF46C2E135DBAED00B6697A /* PBXTextBookmark */ = 5BF46C2E135DBAED00B6697A /* PBXTextBookmark */;
+			5BF46C6B135DDA1900B6697A = 5BF46C6B135DDA1900B6697A /* PBXTextBookmark */;
 			5BF57E72135B39E300367132 = 5BF57E72135B39E300367132 /* PBXTextBookmark */;
+			5BF7CDCD1361B3D5009105C1 /* PBXTextBookmark */ = 5BF7CDCD1361B3D5009105C1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 5B087CF813595EAE0096C05E /* Source Control */;
 		userBuildSettings = {
@@ -231,22 +231,12 @@
 		vrLen = 356;
 		vrLoc = 0;
 	};
-	5B745C06135A696C0086C439 /* PBXTextBookmark */ = {
+	5BF46C6B135DDA1900B6697A /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
-		name = "TwitJustice.h: 9";
+		name = "TwitJustice.h: 2";
 		rLen = 0;
-		rLoc = 167;
-		rType = 0;
-		vrLen = 428;
-		vrLoc = 21;
-	};
-	5BF46C2E135DBAED00B6697A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
-		name = "TwitJustice.h: 15";
-		rLen = 0;
-		rLoc = 313;
+		rLoc = 20;
 		rType = 0;
 		vrLen = 449;
 		vrLoc = 0;
@@ -257,6 +247,16 @@
 		name = "TwitJustice.h: 15";
 		rLen = 0;
 		rLoc = 313;
+		rType = 0;
+		vrLen = 449;
+		vrLoc = 0;
+	};
+	5BF7CDCD1361B3D5009105C1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* TwitJustice.h */;
+		name = "TwitJustice.h: 2";
+		rLen = 0;
+		rLoc = 20;
 		rType = 0;
 		vrLen = 449;
 		vrLoc = 0;
