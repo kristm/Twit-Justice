@@ -9,6 +9,11 @@
 #import "TwitJustice.h"
 #import "TwitReader.h"
 
+@interface TwitJustice(Private)
+- (void) updateTwitSource:(NSArray *) favorites;
+- (void) startTwitJustice:(NSString *)fpath;
+@end
+
 @implementation TwitJustice
 
 @synthesize window;
@@ -42,6 +47,7 @@
 	if([favorites count] > 0){
 		[favRecords setArray:favorites];
 		[favList reloadData];
+		[self updateTwitSource:favorites];
 	}
 	[self startTwitJustice:@"starting"];
 }
@@ -129,6 +135,7 @@
 	[favList reloadData];
 	[sheetController closeSheet:sender];
 	[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
+	[self updateTwitSource:favRecords];
 
 }
 
@@ -140,12 +147,24 @@
 		[favRecords removeObjectAtIndex:selectedRow];
 		[favList reloadData];
 		[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];		
+		[self updateTwitSource:favRecords];
 	}
 }
 
 - (id) getFavorites
 {
 	return [[NSUserDefaults standardUserDefaults] arrayForKey:@"favorites"];
+}
+
+- (void) updateTwitSource:(NSArray *) favorites
+{
+	NSLog(@"wti source %@",twitSource);
+	[twitSource removeAllItems];		
+	for(int i=0; i<[favorites count]; i++){
+		NSLog(@"records %d %@",i,[[favorites objectAtIndex:i] objectForKey:@"username"]);
+		[twitSource addItemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]];
+	}
+	//[favorites release];
 }
 
 - (void) dealloc

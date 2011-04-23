@@ -20,6 +20,7 @@
 	IBOutlet NSTextField *favName;
 	IBOutlet NSTextField *favDescription;
 	IBOutlet NSTableView *favList;
+	IBOutlet NSPopUpButton *twitSource;
 	
 	NSMutableArray *favRecords;
 }
