@@ -22,7 +22,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"Start TwitJustice");
-	NSLog(@"favorites %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"favorites"]);
+	NSLog(@"favorites %@",[self getFavorites]);
 	
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center addObserver:self 
@@ -38,6 +38,15 @@
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
 	
+	//int favorite_count = [[self getFavorites] count];
+	//NSLog("favorites total %d",favorite_count);
+	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
+	//NSLog("class %@", [[self getFavorites] count]);
+	NSLog(@"my favs %d",[favorites count]);
+	if([favorites count] > 0){
+		[favRecords setArray:favorites];
+		[favList reloadData];
+	}
 	[self startTwitJustice:@"starting"];
 }
 
@@ -145,6 +154,11 @@
 	[sheetController closeSheet:sender];
 	[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
 
+}
+
+- (id) getFavorites
+{
+	return [[NSUserDefaults standardUserDefaults] arrayForKey:@"favorites"];
 }
 
 - (void) dealloc

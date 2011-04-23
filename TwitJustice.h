@@ -33,4 +33,5 @@
 //- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
+- (id)getFavorites;
 @end
