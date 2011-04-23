@@ -43,7 +43,7 @@
 - (void) startTwitJustice:(NSString *)fpath{
 	NSLog(@"starttwitjustice %@",fpath);
 	[queue cancelAllOperations];
-	TwitReader* twitreader = [[TwitReader alloc] initWithRootPath:@"meow" operationClass:nil queue:queue];
+	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue];
 	[queue addOperation: twitreader];
 	[twitreader release];		
 }
@@ -88,6 +88,14 @@
 	[prefWindow setLevel:NSStatusWindowLevel];
 	[prefWindow makeKeyAndOrderFront:nil];
 	[prefWindow center];	
+}
+
+- (IBAction) addToFavorites: (id) sender
+{
+	
+	NSLog(@"save to fav %@",sheetController);
+	[sheetController closeSheet:sender];
+
 }
 
 - (void) dealloc
