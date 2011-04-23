@@ -9,17 +9,28 @@
 #import <Cocoa/Cocoa.h>
 #import <BWToolkitFramework/BWToolkitFramework.h>
 
-@interface TwitJustice : NSObject {
+@interface TwitJustice : NSWindowController {
 	NSOperationQueue *queue;	
-    NSWindow *window;
+    //NSWindow *window;
 	NSStatusItem *_statusItem;
 	IBOutlet BWSheetController *sheetController;	
+	IBOutlet BWSelectableToolbar *prefToolbar;	
 	IBOutlet NSMenu	*menuItemMenu;
 	IBOutlet NSWindow *prefWindow;
+	IBOutlet NSTextField *favName;
+	IBOutlet NSTextField *favDescription;
+	IBOutlet NSTableView *favList;
+	
+	NSMutableArray *favRecords;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+
 - (IBAction) prefWindowController: (id) sender;
+- (IBAction) openFavoritesSheet: (id) sender;
 - (IBAction) addToFavorites: (id) sender;
 
+//- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
+- (int)numberOfRowsInTableView:(NSTableView *)aTableView;
 @end

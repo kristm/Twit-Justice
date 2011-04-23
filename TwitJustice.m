@@ -16,12 +16,13 @@
 - (id) init {	
 	self = [super init];
 	queue = [[NSOperationQueue alloc] init];	
-	
+	favRecords = [[NSMutableArray alloc] init];
 	return self;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"Start TwitJustice");
+	//[favList setDataSource:self];
 	// Insert code here to initialize your application 
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center addObserver:self 
@@ -66,6 +67,39 @@
 			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];
 }
 
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
+{
+	NSLog(@"table v2 protocol %@",[favRecords objectAtIndex:rowIndex]);
+    id theRecord, theValue;
+	
+    theRecord = [favRecords objectAtIndex:rowIndex];
+    theValue = [theRecord objectForKey:[aTableColumn identifier]];
+    NSLog(@"table view %@",theValue);
+    return theValue;
+	
+}
+
+/*
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+	NSLog(@"table view protocol %@",[favRecords objectAtIndex:rowIndex]);
+	NSLog(@"col identifier %@",[aTableColumn identifier]);
+	
+    id theRecord, theValue;
+
+    theRecord = [favRecords objectAtIndex:rowIndex];
+    theValue = [theRecord objectForKey:[aTableColumn identifier]];
+    NSLog(@"table view %@",theValue);
+    return theValue;
+	 
+
+	//return [favRecords objectAtIndex:rowIndex];
+}*/
+
+- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+{
+	return [favRecords count];
+}
 
 - (id)statusItem
 {
@@ -90,10 +124,24 @@
 	[prefWindow center];	
 }
 
+- (IBAction) openFavoritesSheet: (id) sender
+{
+	[favName setStringValue:@""];
+	[favDescription setStringValue:@""];	
+	[sheetController openSheet:sender];
+}
+
 - (IBAction) addToFavorites: (id) sender
 {
 	
 	NSLog(@"save to fav %@",sheetController);
+	NSLog(@"fav name %@",[favName stringValue]);
+	NSDictionary *fav = [NSDictionary dictionaryWithObjectsAndKeys:
+						  [favName stringValue], @"username",
+						  [favDescription stringValue], @"description",nil];		
+
+	[favRecords addObject:fav];
+	[favList reloadData];
 	[sheetController closeSheet:sender];
 
 }
