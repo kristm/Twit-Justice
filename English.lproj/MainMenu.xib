@@ -22,7 +22,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="823"/>
-			<integer value="560"/>
+			<integer value="863"/>
 			<integer value="539"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -1124,13 +1124,13 @@ WiAAAAAAAABW+AAArC8AAB0DWFlaIAAAAAAAACYiAAASfwAAsXA</bytes>
 									<int key="NSvFlags">256</int>
 									<string key="NSFrameSize">{480, 269}</string>
 								</object>
-								<object class="NSView" id="209508868">
+								<object class="NSView" id="121519944">
 									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">256</int>
 									<object class="NSMutableArray" key="NSSubviews">
 										<bool key="EncodedWithXMLCoder">YES</bool>
 										<object class="NSBox" id="452521099">
-											<reference key="NSNextResponder" ref="209508868"/>
+											<reference key="NSNextResponder" ref="121519944"/>
 											<int key="NSvFlags">12</int>
 											<object class="NSMutableArray" key="NSSubviews">
 												<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1309,7 +1309,7 @@ WiAAAAAAAABW+AAArC8AAB0DWFlaIAAAAAAAACYiAAASfwAAsXA</bytes>
 												</object>
 											</object>
 											<string key="NSFrame">{{17, 53}, {446, 196}}</string>
-											<reference key="NSSuperview" ref="209508868"/>
+											<reference key="NSSuperview" ref="121519944"/>
 											<reference key="NSNextKeyView" ref="989202750"/>
 											<string key="NSOffsets">{0, 0}</string>
 											<object class="NSTextFieldCell" key="NSTitleCell">
@@ -1330,10 +1330,10 @@ WiAAAAAAAABW+AAArC8AAB0DWFlaIAAAAAAAACYiAAASfwAAsXA</bytes>
 											<bool key="NSTransparent">NO</bool>
 										</object>
 										<object class="NSButton" id="291756667">
-											<reference key="NSNextResponder" ref="209508868"/>
+											<reference key="NSNextResponder" ref="121519944"/>
 											<int key="NSvFlags">292</int>
 											<string key="NSFrame">{{20, 25}, {29, 25}}</string>
-											<reference key="NSSuperview" ref="209508868"/>
+											<reference key="NSSuperview" ref="121519944"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="371183066">
 												<int key="NSCellFlags">-2080244224</int>
@@ -1351,10 +1351,10 @@ WiAAAAAAAABW+AAArC8AAB0DWFlaIAAAAAAAACYiAAASfwAAsXA</bytes>
 											</object>
 										</object>
 										<object class="NSButton" id="1045286047">
-											<reference key="NSNextResponder" ref="209508868"/>
+											<reference key="NSNextResponder" ref="121519944"/>
 											<int key="NSvFlags">292</int>
 											<string key="NSFrame">{{57, 25}, {29, 25}}</string>
-											<reference key="NSSuperview" ref="209508868"/>
+											<reference key="NSSuperview" ref="121519944"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="841484129">
 												<int key="NSCellFlags">-2080244224</int>
@@ -2070,6 +2070,14 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 					</object>
 					<int key="connectionID">877</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">selectedTwitSource:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="314577922"/>
+					</object>
+					<int key="connectionID">878</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2347,7 +2355,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<reference ref="898484556"/>
 							<reference ref="284684592"/>
 							<reference ref="486312610"/>
-							<reference ref="209508868"/>
+							<reference ref="121519944"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Preferences</string>
@@ -2690,7 +2698,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">876</int>
-						<reference key="object" ref="209508868"/>
+						<reference key="object" ref="121519944"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="452521099"/>
@@ -2706,7 +2714,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="625106982"/>
 						</object>
-						<reference key="parent" ref="209508868"/>
+						<reference key="parent" ref="121519944"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">787</int>
@@ -2780,7 +2788,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="371183066"/>
 						</object>
-						<reference key="parent" ref="209508868"/>
+						<reference key="parent" ref="121519944"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">871</int>
@@ -2794,7 +2802,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="841484129"/>
 						</object>
-						<reference key="parent" ref="209508868"/>
+						<reference key="parent" ref="121519944"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">873</int>
@@ -3319,7 +3327,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">877</int>
+			<int key="maxID">878</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3335,9 +3343,11 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<string>openFavoritesSheet:</string>
 							<string>prefWindowController:</string>
 							<string>removeFavorite:</string>
+							<string>selectedTwitSource:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -3352,6 +3362,7 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							<string>openFavoritesSheet:</string>
 							<string>prefWindowController:</string>
 							<string>removeFavorite:</string>
+							<string>selectedTwitSource:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3369,6 +3380,10 @@ hpKEmJmZmoHgAYFbAYaGA</bytes>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">removeFavorite:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectedTwitSource:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

@@ -49,6 +49,10 @@
 		[favList reloadData];
 		[self updateTwitSource:favorites];
 	}
+	
+	if([[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"] != nil){
+		[twitSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
+	}
 	[self startTwitJustice:@"starting"];
 }
 
@@ -149,6 +153,12 @@
 		[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];		
 		[self updateTwitSource:favRecords];
 	}
+}
+
+- (IBAction) selectedTwitSource: (id) sender
+{
+	NSLog(@"set twit source %@",[sender titleOfSelectedItem]);
+	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"twitSource"];
 }
 
 - (id) getFavorites
