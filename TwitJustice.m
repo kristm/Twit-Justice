@@ -22,7 +22,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"Start TwitJustice");
-	NSLog(@"favorites %@",[self getFavorites]);
 	
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center addObserver:self 
@@ -38,11 +37,8 @@
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
 	
-	//int favorite_count = [[self getFavorites] count];
-	//NSLog("favorites total %d",favorite_count);
 	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
-	//NSLog("class %@", [[self getFavorites] count]);
-	NSLog(@"my favs %d",[favorites count]);
+
 	if([favorites count] > 0){
 		[favRecords setArray:favorites];
 		[favList reloadData];
@@ -78,32 +74,15 @@
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
-	NSLog(@"table v2 protocol %@",[favRecords objectAtIndex:rowIndex]);
     id theRecord, theValue;
 	
     theRecord = [favRecords objectAtIndex:rowIndex];
     theValue = [theRecord objectForKey:[aTableColumn identifier]];
-    NSLog(@"table view %@",theValue);
+	
     return theValue;
 	
 }
 
-/*
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-	NSLog(@"table view protocol %@",[favRecords objectAtIndex:rowIndex]);
-	NSLog(@"col identifier %@",[aTableColumn identifier]);
-	
-    id theRecord, theValue;
-
-    theRecord = [favRecords objectAtIndex:rowIndex];
-    theValue = [theRecord objectForKey:[aTableColumn identifier]];
-    NSLog(@"table view %@",theValue);
-    return theValue;
-	 
-
-	//return [favRecords objectAtIndex:rowIndex];
-}*/
 
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -142,9 +121,6 @@
 
 - (IBAction) addFavorite: (id) sender
 {
-	
-	NSLog(@"save to fav %@",sheetController);
-	NSLog(@"fav name %@",[favName stringValue]);
 	NSDictionary *fav = [NSDictionary dictionaryWithObjectsAndKeys:
 						  [favName stringValue], @"username",
 						  [favDescription stringValue], @"description",nil];		
@@ -159,7 +135,7 @@
 - (IBAction) removeFavorite: (id) sender
 {
 	NSInteger selectedRow = [favList selectedRow];
-	NSLog(@"selected row %d",selectedRow);
+	
 	if(selectedRow != -1){
 		[favRecords removeObjectAtIndex:selectedRow];
 		[favList reloadData];
