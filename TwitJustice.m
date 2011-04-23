@@ -22,8 +22,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"Start TwitJustice");
-	//[favList setDataSource:self];
-	// Insert code here to initialize your application 
+	NSLog(@"favorites %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"favorites"]);
+	
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center addObserver:self 
 			   selector:@selector(machineDidWake:)
@@ -143,6 +143,7 @@
 	[favRecords addObject:fav];
 	[favList reloadData];
 	[sheetController closeSheet:sender];
+	[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
 
 }
 
