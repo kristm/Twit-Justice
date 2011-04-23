@@ -28,7 +28,8 @@
 
 - (IBAction) prefWindowController: (id) sender;
 - (IBAction) openFavoritesSheet: (id) sender;
-- (IBAction) addToFavorites: (id) sender;
+- (IBAction) addFavorite: (id) sender;
+- (IBAction) removeFavorite: (id) sender;
 
 //- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;

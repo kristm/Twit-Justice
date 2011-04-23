@@ -140,7 +140,7 @@
 	[sheetController openSheet:sender];
 }
 
-- (IBAction) addToFavorites: (id) sender
+- (IBAction) addFavorite: (id) sender
 {
 	
 	NSLog(@"save to fav %@",sheetController);
@@ -154,6 +154,17 @@
 	[sheetController closeSheet:sender];
 	[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
 
+}
+
+- (IBAction) removeFavorite: (id) sender
+{
+	NSInteger selectedRow = [favList selectedRow];
+	NSLog(@"selected row %d",selectedRow);
+	if(selectedRow != -1){
+		[favRecords removeObjectAtIndex:selectedRow];
+		[favList reloadData];
+		[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];		
+	}
 }
 
 - (id) getFavorites
