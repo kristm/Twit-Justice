@@ -161,6 +161,12 @@
 	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"twitSource"];
 }
 
+- (void) selectedListeningTo: (id) sender
+{
+	NSLog(@"listen to %@",[sender title]);
+	[[sender parentItem] setTitle:[sender title]];
+	[sender setState:1];
+}
 - (id) getFavorites
 {
 	return [[NSUserDefaults standardUserDefaults] arrayForKey:@"favorites"];
@@ -170,11 +176,15 @@
 {
 	NSLog(@"wti source %@",twitSource);
 	[twitSource removeAllItems];		
+	[twitSourceMenu removeAllItems];
+	NSMutableString *twit_source = [[NSString alloc] init];
 	for(int i=0; i<[favorites count]; i++){
-		NSLog(@"records %d %@",i,[[favorites objectAtIndex:i] objectForKey:@"username"]);
-		[twitSource addItemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]];
+		twit_source = [[favorites objectAtIndex:i] objectForKey:@"username"];
+		NSLog(@"records %d %@",i,twit_source);
+		[twitSource addItemWithTitle:twit_source];
+		[twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
 	}
-	//[favorites release];
+	[twit_source release];
 }
 
 - (void) dealloc

@@ -21,6 +21,8 @@
 	IBOutlet NSTextField *favDescription;
 	IBOutlet NSTableView *favList;
 	IBOutlet NSPopUpButton *twitSource;
+	IBOutlet NSMenu *twitSourceMenu;
+	IBOutlet NSMenu *listeningTo;	
 	
 	NSMutableArray *favRecords;
 }
