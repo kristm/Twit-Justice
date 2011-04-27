@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <BWToolkitFramework/BWToolkitFramework.h>
+#import <SystemConfiguration/SCNetwork.h>
 
 @interface TwitJustice : NSWindowController {
 	NSOperationQueue *queue;	
@@ -22,7 +23,7 @@
 	IBOutlet NSTableView *favList;
 	IBOutlet NSPopUpButton *twitSource;
 	IBOutlet NSMenu *twitSourceMenu;
-	IBOutlet NSMenu *listeningTo;	
+	IBOutlet NSMenuItem *statusInfo;
 	
 	NSMutableArray *favRecords;
 }
