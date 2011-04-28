@@ -29,8 +29,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	NSLog(@"TwitJustice app loaded");
 	
-
-	
 	NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[center addObserver:self 
 			   selector:@selector(machineDidWake:)
@@ -167,19 +165,28 @@
 	}
 }
 
+- (void) menuNeedsUpdate: (id) sender
+{
+	NSLog(@"menu needs update");
+	NSLog(@"update menu %@",[twitSourceMenu propertiesToUpdate]);
+}
+
 - (IBAction) selectedTwitSource: (id) sender
 {
 	NSString *listening_to_label = [[NSString alloc] init];
 	listening_to_label = [[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"];
 
 	[[twitSourceMenu itemWithTitle:listening_to_label] setState:0];
-	
-	//update menu bar twit source label
-	NSLog(@"update menu %@",[sender titleOfSelectedItem]);
-	[twitSourceMenu setTitle:[sender titleOfSelectedItem]];
-	
+		
 	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"twitSource"];
 	[[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]] setState:1];
+	
+	//update menu bar twit source label
+	NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
+	[twitSourceMenu setTitle:[sender titleOfSelectedItem]];
+	[twitSourceMenu update];
+
+	//NSLog(@"update menu %@",[twitSourceMenu propertiesToUpdate]);
 	
 	[listening_to_label release];
 }
