@@ -165,11 +165,6 @@
 	}
 }
 
-- (void) menuNeedsUpdate: (id) sender
-{
-	NSLog(@"menu needs update");
-	NSLog(@"update menu %@",[twitSourceMenu propertiesToUpdate]);
-}
 
 - (IBAction) selectedTwitSource: (id) sender
 {
@@ -183,10 +178,9 @@
 	
 	//update menu bar twit source label
 	NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
-	[twitSourceMenu setTitle:[sender titleOfSelectedItem]];
-	[twitSourceMenu update];
-
-	//NSLog(@"update menu %@",[twitSourceMenu propertiesToUpdate]);
+	//[twitSourceMenu setTitle:[sender titleOfSelectedItem]];
+	//[twitSourceMenu update];
+	[self performSelector:@selector(selectedListeningTo:) withObject:[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]]];
 	
 	[listening_to_label release];
 }
