@@ -43,6 +43,32 @@
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
 	
+	OSErr		theErr = noErr;
+	short		numOfVoices;
+	long		voiceIndex;
+	VoiceSpec	theVoiceSpec;
+
+	
+	theErr = CountVoices(&numOfVoices);
+	NSLog(@"num voices %d",numOfVoices);
+	for (voiceIndex = 1; voiceIndex <= numOfVoices; voiceIndex++) {
+		VoiceDescription	voiceDesc;
+		theErr = GetIndVoice(voiceIndex, &theVoiceSpec);
+		
+		if (theErr != noErr)
+			NSRunAlertPanel(@"GetIndVoice", [NSString stringWithFormat:@"Error #%d returned.", theErr], @"Oh?", NULL, NULL);
+		if (theErr == noErr)
+			theErr = GetVoiceDescription(&theVoiceSpec, &voiceDesc, sizeof(voiceDesc));
+		if (theErr != noErr)
+			NSRunAlertPanel(@"GetVoiceDescription", [NSString stringWithFormat:@"Error #%d returned.", theErr], @"Oh?", NULL, NULL);
+		
+		if (theErr == noErr) {
+			NSString	*theNameString = [[[NSString alloc]initWithCString:(char *) &(voiceDesc.name[1]) length:voiceDesc.name[0]]autorelease];		
+			NSLog(@"voice name %@",theNameString);
+			[voicesSource addItemWithTitle:theNameString];
+		}
+	}
+	
 	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
 
 	if([favorites count] > 0){
@@ -61,6 +87,7 @@
 		[self startTwitJustice:@"starting"];		
 		[statusInfo setTitle:@"Listening to"];
 	}else{
+		[self startTwitJustice:@"starting"];		
 		[statusInfo setTitle:@"Not Connected"];
 	}
 

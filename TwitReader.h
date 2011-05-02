@@ -12,6 +12,7 @@
 @interface TwitReader : NSOperation {
 	NSString*			twitData;
 	NSOperationQueue*	queue;	
+	int tjInterval;
 
 }
 

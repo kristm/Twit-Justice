@@ -8,7 +8,6 @@
 
 #import "TwitReader.h"
 
-
 @implementation TwitReader
 
 - (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq
@@ -31,8 +30,9 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
 		if([self isCancelled]) break;
-		NSLog(@"twit loop %@",self);
-		sleep(5);
+		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"];
+		NSLog(@"twit loop %@ %d",self,tjInterval);
+		sleep(tjInterval);
 	}
 	[pool release];	
 }

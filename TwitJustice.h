@@ -10,6 +10,11 @@
 #import <BWToolkitFramework/BWToolkitFramework.h>
 #import <SystemConfiguration/SCNetwork.h>
 
+//#import <Carbon/Carbon.h>
+//#import <unistd.h>
+//#import <sys/stat.h>
+//#import <fcntl.h>
+
 @interface TwitJustice : NSWindowController {
 	NSOperationQueue *queue;	
     //NSWindow *window;
@@ -22,11 +27,13 @@
 	IBOutlet NSTextField *favDescription;
 	IBOutlet NSTableView *favList;
 	IBOutlet NSPopUpButton *twitSource;
+	IBOutlet NSPopUpButton *voicesSource;
 	IBOutlet NSMenu *twitSourceMenu;
 	IBOutlet NSMenuItem *statusInfo;
 	
 	NSMutableArray *favRecords;
 }
+
 
 @property (assign) IBOutlet NSWindow *window;
 
