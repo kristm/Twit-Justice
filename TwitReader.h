@@ -7,15 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <SystemConfiguration/SCNetwork.h>
+#import "JSON.h"
 
 
 @interface TwitReader : NSOperation {
+@private
+	NSMenuItem *menuLabel;
+@public
 	NSString*			twitData;
 	NSOperationQueue*	queue;	
 	int tjInterval;
 
 }
 
-- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq;
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq statusLabel:(NSMenuItem *)menuLbl;
 
 @end

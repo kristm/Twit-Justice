@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <BWToolkitFramework/BWToolkitFramework.h>
-#import <SystemConfiguration/SCNetwork.h>
+
 
 //#import <Carbon/Carbon.h>
 //#import <unistd.h>

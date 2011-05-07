@@ -12,7 +12,7 @@
 @interface TwitJustice(Private)
 - (void) updateTwitSource:(NSArray *) favorites;
 - (void) startTwitJustice:(NSString *)fpath;
-- (BOOL) isConnected;
+
 @end
 
 @implementation TwitJustice
@@ -42,13 +42,13 @@
 			   selector:@selector(machineWillShutDown:)
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
-	
+
+
 	OSErr		theErr = noErr;
 	short		numOfVoices;
 	long		voiceIndex;
 	VoiceSpec	theVoiceSpec;
 
-	
 	theErr = CountVoices(&numOfVoices);
 	NSLog(@"num voices %d",numOfVoices);
 	for (voiceIndex = 1; voiceIndex <= numOfVoices; voiceIndex++) {
@@ -63,7 +63,7 @@
 			NSRunAlertPanel(@"GetVoiceDescription", [NSString stringWithFormat:@"Error #%d returned.", theErr], @"Oh?", NULL, NULL);
 		
 		if (theErr == noErr) {
-			NSString	*theNameString = [[[NSString alloc]initWithCString:(char *) &(voiceDesc.name[1]) length:voiceDesc.name[0]]autorelease];		
+			NSString	*theNameString = [[[NSString alloc]initWithCString:(char *) &(voiceDesc.name[1]) length:voiceDesc.name[0]] autorelease];		
 			NSLog(@"voice name %@",theNameString);
 			[voicesSource addItemWithTitle:theNameString];
 		}
@@ -82,24 +82,18 @@
 		}
 		
 	}
-	
-	if([self isConnected]){
-		[self startTwitJustice:@"starting"];		
-		[statusInfo setTitle:@"Listening to"];
-	}else{
-		[self startTwitJustice:@"starting"];		
-		[statusInfo setTitle:@"Not Connected"];
-	}
+	[favorites release];
+	[self startTwitJustice:@"starting"];
 
 }
 
 - (void) startTwitJustice:(NSString *)fpath{
 	NSLog(@"starttwitjustice %@",fpath);
 	[queue cancelAllOperations];
-	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue];
+	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue statusLabel:statusInfo];
 	[queue addOperation: twitreader];
 	[twitreader release];		
-}
+} 
 
 - (void) machineWillSleep:(NSNotification *)notification{
 	NSLog(@"TwitJustice sleep");
@@ -125,7 +119,7 @@
 	
     theRecord = [favRecords objectAtIndex:rowIndex];
     theValue = [theRecord objectForKey:[aTableColumn identifier]];
-	
+
     return theValue;
 	
 }
@@ -168,15 +162,13 @@
 
 - (IBAction) addFavorite: (id) sender
 {
-	NSDictionary *fav = [NSDictionary dictionaryWithObjectsAndKeys:
-						  [favName stringValue], @"username",
-						  [favDescription stringValue], @"description",nil];		
-
-	[favRecords addObject:fav];
+	[favRecords addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+						   [favName stringValue], @"username",
+						   [favDescription stringValue], @"description",nil]];
 	[favList reloadData];
 	[sheetController closeSheet:sender];
 	[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
-	[self updateTwitSource:favRecords];
+	[self updateTwitSource:favRecords];	
 
 }
 
@@ -205,8 +197,6 @@
 	
 	//update menu bar twit source label
 	NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
-	//[twitSourceMenu setTitle:[sender titleOfSelectedItem]];
-	//[twitSourceMenu update];
 	[self performSelector:@selector(selectedListeningTo:) withObject:[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]]];
 	
 	[listening_to_label release];
@@ -247,33 +237,10 @@
 		[twitSource addItemWithTitle:twit_source];
 		//add to Menubar dropdown
 		[twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
-
-
 	}
 	[twit_source release];
 }
 
-- (BOOL) isConnected
-{
-    Boolean success;
-    BOOL connected;
-    SCNetworkConnectionFlags status;
-    
-    success = SCNetworkCheckReachabilityByName("www.twitter.com", 
-                                              &status);
-    
-    connected = success && (status & kSCNetworkFlagsReachable) && !(status & 
-                                                               kSCNetworkFlagsConnectionRequired);
-    
-    if (!connected)
-    {   
-        NSLog(@"No net");
-    }else{
-        NSLog(@"Net OK");
-	}
-	
-	return connected;
-}
 
 - (void) dealloc
 {
