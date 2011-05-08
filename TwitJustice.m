@@ -241,6 +241,12 @@
 	[twit_source release];
 }
 
+- (IBAction) setVoice:(id) sender
+{
+	NSLog(@"set voice %@",[sender title]);
+	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"voice"];
+}
+
 
 - (void) dealloc
 {

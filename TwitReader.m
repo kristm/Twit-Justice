@@ -7,10 +7,11 @@
 //
 
 #import "TwitReader.h"
+#import "JSON.h"
 
 @interface TwitReader(Private)
 - (BOOL) isConnected;
-
+- (void) readTweet:(NSString *)twitSource;
 @end
 
 
@@ -42,8 +43,10 @@
 		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"];
 		NSLog(@"twit loop %@ %d %@",self,tjInterval,[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 		NSLog(@"connection status %d",[self isConnected]);
+		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
 		if([self isConnected]){
 			[menuLabel setTitle:@"Listening to"];
+			[self readTweet:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
 		}else{
 			[menuLabel setTitle:@"Not Connected"];
 		}
@@ -75,4 +78,22 @@
 	return connected;
 }
 
+- (void) readTweet:(NSString *)twitSource
+{
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+
+	NSURLRequest *request = [NSURLRequest requestWithURL:
+							 [NSURL URLWithString:[NSString stringWithFormat:@"http://twitter.com/timeline/%@.json",twitSource]]];
+	
+	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+	
+	NSArray *statuses = [parser objectWithString:json_string error:nil];
+	
+	for (NSDictionary *status in statuses) {
+		// You can retrieve individual values using objectForKey on the status NSDictionary // This will print the tweet and username to the console 
+		NSLog(@"%@ - %@", [status objectForKey:@"text"], [[status objectForKey:@"user"]objectForKey:@"screen_name"]); 
+	}
+	
+}
 @end

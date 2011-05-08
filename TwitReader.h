@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <SystemConfiguration/SCNetwork.h>
-#import "JSON.h"
+
 
 
 @interface TwitReader : NSOperation {

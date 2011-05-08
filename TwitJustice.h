@@ -42,7 +42,7 @@
 - (IBAction) addFavorite: (id) sender;
 - (IBAction) removeFavorite: (id) sender;
 - (IBAction) selectedTwitSource: (id) sender;
-
+- (IBAction) setVoice:(id) sender;
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
