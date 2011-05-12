@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>5BB46BDA13754B7C006E9F91</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>SBJsonParser.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>5BB46BDB13754B7C006E9F91</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>SBJsonParser.m</string>
-						<key>_historyCapacity</key>
-						<integer>20</integer>
-						<key>bookmark</key>
-						<string>5BEED04A137AF35000DB76FB</string>
-						<key>history</key>
-						<array>
-							<string>5B2F93E0137AF3230099A750</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1152, 570}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>38 141 1152 611 0 0 1280 778 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -305,7 +264,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>5BB46AA7137535D9006E9F91</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1DDD58140DA1D0A300B32029</string>
@@ -313,6 +271,8 @@
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>5B3D7799137C197A0074B1E4</string>
+								<string>5B3D779A137C197A0074B1E4</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
 								<string>1DDD58140DA1D0A300B32029</string>
@@ -320,12 +280,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>52</integer>
-									<integer>51</integer>
+									<integer>25</integer>
+									<integer>24</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 340}, {186, 561}}</string>
+							<string>{{0, 0}, {186, 561}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -414,7 +374,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5BEED045137AF35000DB76FB</string>
+										<string>5B3D7803137C990B0074B1E4</string>
 										<key>history</key>
 										<array>
 											<string>5B7B61AF13686CE900997D0D</string>
@@ -422,11 +382,10 @@
 											<string>5BB46BD313754B7C006E9F91</string>
 											<string>5BB46BD413754B7C006E9F91</string>
 											<string>5BB46BD513754B7C006E9F91</string>
-											<string>5BB46BDD1375807A006E9F91</string>
 											<string>5BC5A24613764339003EA1D6</string>
 											<string>5B2F935B137AE88D0099A750</string>
 											<string>5B2F935C137AE88D0099A750</string>
-											<string>5B2F93DD137AF3230099A750</string>
+											<string>5BEED045137AF35000DB76FB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -438,14 +397,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 5}, {1060, 247}}</string>
+								<string>{{0, 5}, {1060, 235}}</string>
 								<key>RubberWindowFrame</key>
 								<string>7 158 1268 620 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>247pt</string>
+							<string>235pt</string>
 						</dict>
 						<dict>
 							<key>BecomeActive</key>
@@ -467,19 +426,18 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5BEED046137AF35000DB76FB</string>
+										<string>5B3D7804137C990B0074B1E4</string>
 										<key>history</key>
 										<array>
 											<string>5B6CB4F3135977E5002955AF</string>
 											<string>5B6CB4F4135977E5002955AF</string>
 											<string>5B7B61AF13686CE900997D0D</string>
-											<string>5BB46BD313754B7C006E9F91</string>
 											<string>5BB46BD413754B7C006E9F91</string>
 											<string>5BB46BD513754B7C006E9F91</string>
-											<string>5BB46BDD1375807A006E9F91</string>
 											<string>5BC5A23C137640AA003EA1D6</string>
 											<string>5B2F93D9137AF1080099A750</string>
-											<string>5B2F93DE137AF3230099A750</string>
+											<string>5B3D77A7137C1A2F0074B1E4</string>
+											<string>5B3D77C3137C200E0074B1E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -491,14 +449,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 257}, {1060, 312}}</string>
+								<string>{{0, 245}, {1060, 324}}</string>
 								<key>RubberWindowFrame</key>
 								<string>7 158 1268 620 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>312pt</string>
+							<string>324pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -518,7 +476,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5BEED047137AF35000DB76FB</string>
+										<string>5B3D7805137C990B0074B1E4</string>
 										<key>history</key>
 										<array>
 											<string>5B6CB4F3135977E5002955AF</string>
@@ -526,7 +484,7 @@
 											<string>5B94546A136EF84200FC0C67</string>
 											<string>5BB46ADF137537EB006E9F91</string>
 											<string>5BB46BA91375451B006E9F91</string>
-											<string>5B2F93DF137AF3230099A750</string>
+											<string>5BEED047137AF35000DB76FB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -587,9 +545,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>5BEED048137AF35000DB76FB</string>
+				<string>5B3D779F137C197A0074B1E4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>5BEED049137AF35000DB76FB</string>
+				<string>5B3D77A0137C197A0074B1E4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
@@ -730,8 +688,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5B087D0113595ECB0096C05E</string>
-		<string>5BB46BDA13754B7C006E9F91</string>
 		<string>/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -812,7 +770,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>5B087D0113595ECB0096C05E</string>
-				<string>5BEED04B137AF35000DB76FB</string>
+				<string>5B3D77A1137C197A0074B1E4</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -934,13 +892,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>5BC5A24C13764339003EA1D6</string>
+				<string>5B3D77E4137C26C60074B1E4</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>5BC5A24D13764339003EA1D6</string>
-				<string>5BC5A24E13764339003EA1D6</string>
-				<string>5BC5A24F13764339003EA1D6</string>
-				<string>5BC5A25013764339003EA1D6</string>
-				<string>5BC5A25113764339003EA1D6</string>
+				<string>5B3D77E5137C26C60074B1E4</string>
+				<string>5B3D77E6137C26C60074B1E4</string>
+				<string>5B3D77E7137C26C60074B1E4</string>
+				<string>5B3D77E8137C26C60074B1E4</string>
+				<string>5B3D77E9137C26C60074B1E4</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>

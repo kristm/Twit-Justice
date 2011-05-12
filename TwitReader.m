@@ -7,7 +7,7 @@
 //
 
 #import "TwitReader.h"
-#import "JSON.h"
+#import <YAJL/YAJL.h>
 
 @interface TwitReader(Private)
 - (BOOL) isConnected;
@@ -80,24 +80,36 @@
 
 - (void) readTweet:(NSString *)twitSource
 {
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	//SBJsonParser *parser = [[SBJsonParser alloc] init];
 
 	//twit url: http://api.twitter.com/1/statuses/user_timeline.json?screen_name=lovipoe
 	NSURLRequest *request = [NSURLRequest requestWithURL:
 							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[NSString stringWithString:@"lovipoe"]]]];
 	
-	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSError *error = nil;
+	
+	//NSData *jsonData = [NSData dataWithContentsOfFile:@"example.json"];
+	NSArray *status = [data yajl_JSON];
+	//NSLog(@"status %@",status);
+	int status_count = [status count];
+	NSLog(@"total %d",status_count);
+	NSLog(@"status 1 %@",[[status objectAtIndex:0] objectForKey:@"text"] );
+	NSLog(@"user %@",[[[status objectAtIndex:0] objectForKey:@"user"] objectForKey:@"name"] );
+	//YAJLDocument *document = [[YAJLDocument alloc] initWithData:data parserOptions:YAJLParserOptionsNone error:&error];
+	// Access root element at document.root
+	//NSLog(@"Root: %@", document.root);
+	//[document release];
+	
+	/*NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];	
 	NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
 	
 	NSArray *statuses = [parser objectWithString:json_string error:nil];
-	int scount = [statuses count];
-	//NSLog("status length %ld",scount);
-
 	//NSLog(@"statuses %@",statuses);
 	for (NSDictionary *status in statuses) {
 		// You can retrieve individual values using objectForKey on the status NSDictionary // This will print the tweet and username to the console 
 		NSLog(@"%@ - %@", [status objectForKey:@"text"], [[status objectForKey:@"user"]objectForKey:@"screen_name"]); 
-	}
+	}*/
 	
 }
 @end
