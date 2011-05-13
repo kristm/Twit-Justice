@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* TwitJustice.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */; };
-		5B3D7794137C19210074B1E4 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D7793137C19210074B1E4 /* YAJL.framework */; };
-		5B3D77A2137C198B0074B1E4 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B3D7793137C19210074B1E4 /* YAJL.framework */; };
 		5B6CB4CB135968F2002955AF /* twitjustice.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B6CB4CA135968F2002955AF /* twitjustice.tiff */; };
 		5B6CB5041359BD2A002955AF /* TwitReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */; };
 		5B7B61D613686EEF00997D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */; };
+		5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
+		5BC11EA5137D9CC800F8DEEC /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
 		5BF57DC2135B305100367132 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF57DC1135B305100367132 /* BWToolkitFramework.framework */; };
 		5BF57E3E135B315D00367132 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BF57DC1135B305100367132 /* BWToolkitFramework.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -22,13 +22,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5BC11EAE137D9CD700F8DEEC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BC11EA5137D9CC800F8DEEC /* YAJL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BF57E49135B318200367132 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B3D77A2137C198B0074B1E4 /* YAJL.framework in CopyFiles */,
 				5BF57E3E135B315D00367132 /* BWToolkitFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,11 +55,11 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		5B3D7793137C19210074B1E4 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
 		5B6CB4CA135968F2002955AF /* twitjustice.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = twitjustice.tiff; sourceTree = "<group>"; };
 		5B6CB5021359BD2A002955AF /* TwitReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitReader.h; sourceTree = "<group>"; };
 		5B6CB5031359BD2A002955AF /* TwitReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitReader.m; sourceTree = "<group>"; };
 		5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5BC11E95137D9CAA00F8DEEC /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
 		5BF57DC1135B305100367132 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TwitJustice-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TwitJustice-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* TwitJustice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitJustice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +73,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				5BF57DC2135B305100367132 /* BWToolkitFramework.framework in Frameworks */,
 				5B7B61D613686EEF00997D0D /* SystemConfiguration.framework in Frameworks */,
-				5B3D7794137C19210074B1E4 /* YAJL.framework in Frameworks */,
+				5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +102,12 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BC11E95137D9CAA00F8DEEC /* YAJL.framework */,
 				5BF57DC1135B305100367132 /* BWToolkitFramework.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */,
-				5B3D7793137C19210074B1E4 /* YAJL.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				5BF57E49135B318200367132 /* CopyFiles */,
+				5BC11EAE137D9CD700F8DEEC /* CopyFiles */,
 			);
 			buildRules = (
 			);

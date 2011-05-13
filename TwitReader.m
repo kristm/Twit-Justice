@@ -7,7 +7,7 @@
 //
 
 #import "TwitReader.h"
-#import <YAJL/YAJL.h>
+
 
 @interface TwitReader(Private)
 - (BOOL) isConnected;
@@ -40,17 +40,19 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
 		if([self isCancelled]) break;
-		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 60;
+		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"];
 		NSLog(@"twit loop %@ %d %@",self,tjInterval,[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 		NSLog(@"connection status %d",[self isConnected]);
 		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
+		NSLog(@"twit source: %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);	
+		NSLog(@"interval: %d",tjInterval);
 		if([self isConnected]){
 			[menuLabel setTitle:@"Listening to"];
 			[self readTweet:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
 		}else{
 			[menuLabel setTitle:@"Not Connected"];
 		}
-		NSLog(@"interval %d",tjInterval);
+		
 		sleep(tjInterval);
 	}
 	[pool release];	
@@ -80,11 +82,8 @@
 
 - (void) readTweet:(NSString *)twitSource
 {
-	//SBJsonParser *parser = [[SBJsonParser alloc] init];
-	
-	//twit url: http://api.twitter.com/1/statuses/user_timeline.json?screen_name=lovipoe
 	NSURLRequest *request = [NSURLRequest requestWithURL:
-							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[NSString stringWithString:@"lovipoe"]]]];
+							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
 	
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
 	NSError *error = nil;
@@ -108,4 +107,5 @@
 	}
 	
 }
+
 @end

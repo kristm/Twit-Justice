@@ -64,7 +64,7 @@
 		
 		if (theErr == noErr) {
 			NSString	*theNameString = [[[NSString alloc]initWithCString:(char *) &(voiceDesc.name[1]) length:voiceDesc.name[0]] autorelease];		
-			NSLog(@"voice name %@",theNameString);
+			//NSLog(@"voice name %@",theNameString);
 			[voicesSource addItemWithTitle:theNameString];
 		}
 	}
@@ -196,7 +196,7 @@
 	[[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]] setState:1];
 	
 	//update menu bar twit source label
-	NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
+	//NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
 	[self performSelector:@selector(selectedListeningTo:) withObject:[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]]];
 	
 	[listening_to_label release];
@@ -215,8 +215,9 @@
 	
 	//update preferences control
 	[twitSource selectItemWithTitle:[sender title]];
-	
+	NSLog(@"set twit source %@",[sender title]);
 	[[NSUserDefaults standardUserDefaults] setValue:[sender title] forKey:@"twitSource"];
+	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 	[listening_to_label release];
 }
 - (id) getFavorites
@@ -231,14 +232,23 @@
 	[twitSource removeAllItems];		
 	[twitSourceMenu removeAllItems];
 	NSMutableString *twit_source = [[NSString alloc] init];
+	NSString *currentTwitSource = [NSString stringWithString:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
+	NSMenuItem *menuItem;
 	for(int i=0; i<[favorites count]; i++){
 		twit_source = [[favorites objectAtIndex:i] objectForKey:@"username"];
 		// add to dropdown in General Preferences
 		[twitSource addItemWithTitle:twit_source];
 		//add to Menubar dropdown
-		[twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
+		menuItem = [twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
+		if([currentTwitSource isEqualToString:[menuItem title]]){
+			[menuItem setState:YES];
+		}
+
+
 	}
+
 	[twit_source release];
+	[currentTwitSource release];
 }
 
 - (IBAction) setVoice:(id) sender
