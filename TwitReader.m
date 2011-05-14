@@ -90,15 +90,13 @@
 	
 	//NSData *jsonData = [NSData dataWithContentsOfFile:@"example.json"];
 	NSArray *status = [data yajl_JSON];
-	//NSLog(@"status %@",[status objectForKey:@"error"] );
-	//NSLog(@"has error %d",[status indexOfObject:@"error"]);
 	int status_count = [status count];
 	NSLog(@"total %d",status_count);
 	NSLog(@"classname %@",[status className]); 
 	NSLog(@"error class %@",[[status valueForKey:@"error"] className]); // should be string if error, array if not
 	
 	NSString *status_class = [status className];
-	if([status_class isEqualToString:@"NSCFDictionary"]){
+	if([status_class isEqualToString:@"NSCFDictionary"]){ // this is a cheap ass version of error checking, i wonder if there's a better way
 		NSLog(@"proabably an error");
 		NSLog(@"%@",[status valueForKey:@"error"]);
 	}else{

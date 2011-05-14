@@ -372,7 +372,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5B79FA7A137DFD0E00421CFB</string>
+										<string>5B79FAB1137DFF8B00421CFB</string>
 										<key>history</key>
 										<array>
 											<string>5B6CB4F3135977E5002955AF</string>
@@ -410,7 +410,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitJustice.m</string>
+								<string>TwitReader.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -418,11 +418,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TwitJustice.m</string>
+										<string>TwitReader.m</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5B79FA7B137DFD0E00421CFB</string>
+										<string>5B79FAB3137DFF8B00421CFB</string>
 										<key>history</key>
 										<array>
 											<string>5B6CB4F3135977E5002955AF</string>
@@ -430,8 +430,8 @@
 											<string>5B7B61AF13686CE900997D0D</string>
 											<string>5BB46BD313754B7C006E9F91</string>
 											<string>5B79FA1B137DF8F900421CFB</string>
-											<string>5B79FA25137DFAFA00421CFB</string>
-											<string>5B79FA26137DFAFA00421CFB</string>
+											<string>5B79FAB2137DFF8B00421CFB</string>
+											<string>5B79FAAA137DFEB300421CFB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -470,7 +470,7 @@
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5B79FA7C137DFD0E00421CFB</string>
+										<string>5B79FAB4137DFF8B00421CFB</string>
 										<key>history</key>
 										<array>
 											<string>5B6CB4F3135977E5002955AF</string>

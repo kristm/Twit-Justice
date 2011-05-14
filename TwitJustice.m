@@ -43,6 +43,10 @@
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
 
+	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:10],@"tjInterval", nil];
+	[[NSUserDefaults standardUserDefaults] registerDefaults: defaults];	
+
+	
 
 	OSErr		theErr = noErr;
 	short		numOfVoices;
