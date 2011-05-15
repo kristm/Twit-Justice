@@ -14,6 +14,7 @@
 @interface TwitReader : NSOperation {
 @private
 	NSMenuItem *menuLabel;
+	NSSpeechSynthesizer *speechSynth;
 @public
 	NSString*			twitData;
 	NSOperationQueue*	queue;	

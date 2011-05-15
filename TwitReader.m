@@ -11,6 +11,7 @@
 
 @interface TwitReader(Private)
 - (BOOL) isConnected;
+- (NSString *) getVoiceIdentifier;
 - (void) readTweet:(NSString *)twitSource;
 @end
 
@@ -23,6 +24,8 @@
 	twitData = [pp retain];
 	//menuLabel = menuLbl; // whats the difference between [menuLbl retail]?
 	menuLabel = [menuLbl retain];
+	speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:[self getVoiceIdentifier]];
+	NSLog(@"voices %@",[NSSpeechSynthesizer availableVoices]);
 	return self;
 }
 
@@ -31,6 +34,7 @@
 	NSLog(@"********** dealloc twitreader");
     [twitData release];
 	[menuLabel release];
+	[speechSynth release];
     [super dealloc];
 }
 
@@ -40,7 +44,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
 		if([self isCancelled]) break;
-		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"];
+		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 60;
 		NSLog(@"twit loop %@ %d %@",self,tjInterval,[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 		NSLog(@"connection status %d",[self isConnected]);
 		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
@@ -80,6 +84,10 @@
 	return connected;
 }
 
+- (NSString *) getVoiceIdentifier{
+	return [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
+}
+
 - (void) readTweet:(NSString *)twitSource
 {
 	NSURLRequest *request = [NSURLRequest requestWithURL:
@@ -94,14 +102,17 @@
 	NSLog(@"total %d",status_count);
 	NSLog(@"classname %@",[status className]); 
 	NSLog(@"error class %@",[[status valueForKey:@"error"] className]); // should be string if error, array if not
-	
+	[speechSynth setVoice:[self getVoiceIdentifier]];
 	NSString *status_class = [status className];
 	if([status_class isEqualToString:@"NSCFDictionary"]){ // this is a cheap ass version of error checking, i wonder if there's a better way
 		NSLog(@"proabably an error");
 		NSLog(@"%@",[status valueForKey:@"error"]);
+		[speechSynth startSpeakingString:[NSString stringWithFormat:@"%@:%@",@"error",[status valueForKey:@"error"]]];
+
 	}else{
 		NSLog(@"status 1 %@",[[status objectAtIndex:0] objectForKey:@"text"] );
-		NSLog(@"user %@",[[[status objectAtIndex:0] objectForKey:@"user"] objectForKey:@"name"] );		
+		NSLog(@"user %@",[[[status objectAtIndex:0] objectForKey:@"user"] objectForKey:@"name"] );	
+		[speechSynth startSpeakingString:[[status objectAtIndex:0] objectForKey:@"text"]];
 	}
 	
 }

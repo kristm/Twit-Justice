@@ -43,7 +43,8 @@
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
 
-	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:10],@"tjInterval", nil];
+	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:10],@"tjInterval", 
+							  [NSString stringWithString:@"Alex"],@"voice",nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults: defaults];	
 
 	
@@ -72,6 +73,7 @@
 			[voicesSource addItemWithTitle:theNameString];
 		}
 	}
+	[voicesSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
 	
 	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
 
