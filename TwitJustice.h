@@ -16,9 +16,13 @@
 //#import <fcntl.h>
 
 @interface TwitJustice : NSWindowController {
+@private
 	NSOperationQueue *queue;	
+	NSMutableArray *favRecords;	
+	NSStatusItem *_statusItem;	
     //NSWindow *window;
-	NSStatusItem *_statusItem;
+
+@public
 	IBOutlet BWSheetController *sheetController;	
 	IBOutlet BWSelectableToolbar *prefToolbar;	
 	IBOutlet NSMenu	*menuItemMenu;
@@ -29,9 +33,8 @@
 	IBOutlet NSPopUpButton *twitSource;
 	IBOutlet NSPopUpButton *voicesSource;
 	IBOutlet NSMenu *twitSourceMenu;
-	IBOutlet NSMenuItem *statusInfo;
-	
-	NSMutableArray *favRecords;
+	IBOutlet NSMenuItem *statusInfo;	
+
 }
 
 

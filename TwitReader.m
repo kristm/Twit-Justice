@@ -25,7 +25,6 @@
 	//menuLabel = menuLbl; // whats the difference between [menuLbl retail]?
 	menuLabel = [menuLbl retain];
 	speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:[self getVoiceIdentifier]];
-	NSLog(@"voices %@",[NSSpeechSynthesizer availableVoices]);
 	return self;
 }
 

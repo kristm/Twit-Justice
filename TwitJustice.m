@@ -12,6 +12,7 @@
 @interface TwitJustice(Private)
 - (void) updateTwitSource:(NSArray *) favorites;
 - (void) startTwitJustice:(NSString *)fpath;
+- (BOOL) isValidVoice:(NSString *)voice;
 
 @end
 
@@ -47,34 +48,19 @@
 							  [NSString stringWithString:@"Alex"],@"voice",nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults: defaults];	
 
-	
-
-	OSErr		theErr = noErr;
-	short		numOfVoices;
-	long		voiceIndex;
-	VoiceSpec	theVoiceSpec;
-
-	theErr = CountVoices(&numOfVoices);
-	NSLog(@"num voices %d",numOfVoices);
-	for (voiceIndex = 1; voiceIndex <= numOfVoices; voiceIndex++) {
-		VoiceDescription	voiceDesc;
-		theErr = GetIndVoice(voiceIndex, &theVoiceSpec);
-		
-		if (theErr != noErr)
-			NSRunAlertPanel(@"GetIndVoice", [NSString stringWithFormat:@"Error #%d returned.", theErr], @"Oh?", NULL, NULL);
-		if (theErr == noErr)
-			theErr = GetVoiceDescription(&theVoiceSpec, &voiceDesc, sizeof(voiceDesc));
-		if (theErr != noErr)
-			NSRunAlertPanel(@"GetVoiceDescription", [NSString stringWithFormat:@"Error #%d returned.", theErr], @"Oh?", NULL, NULL);
-		
-		if (theErr == noErr) {
-			NSString	*theNameString = [[[NSString alloc]initWithCString:(char *) &(voiceDesc.name[1]) length:voiceDesc.name[0]] autorelease];		
-			//NSLog(@"voice name %@",theNameString);
-			[voicesSource addItemWithTitle:theNameString];
+	NSArray *voices = [NSSpeechSynthesizer availableVoices];
+	NSString *shortname = [[NSString alloc] autorelease];
+	if([voices count] > 0){
+		for(NSString *voice in voices){
+			shortname = [voice substringFromIndex:33];
+			if([self isValidVoice:voice]){
+				[voicesSource addItemWithTitle:shortname];
+				NSLog(@"voice %@",[voice substringFromIndex:33]);
+			}
+				
 		}
+		[voicesSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
 	}
-	[voicesSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
-	
 	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
 
 	if([favorites count] > 0){
@@ -263,6 +249,12 @@
 	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"voice"];
 }
 
+- (BOOL) isValidVoice:(NSString *)voice
+{
+	return [voice isEqualToString:@"Agnes"] || [voice isEqualToString:@"Albert"] || [voice isEqualToString:@"Bruce"] || 
+			[voice isEqualToString:@"Fred"] || [voice isEqualToString:@"Kathy"] || [voice isEqualToString:@"Princess"] || 
+			[voice isEqualToString:@"Ralph"] || [voice isEqualToString:@"Vicki"] || [voice isEqualToString:@"Victoria"];
+}
 
 - (void) dealloc
 {
