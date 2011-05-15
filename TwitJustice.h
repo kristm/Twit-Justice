@@ -20,7 +20,7 @@
 	NSOperationQueue *queue;	
 	NSMutableArray *favRecords;	
 	NSStatusItem *_statusItem;	
-    //NSWindow *window;
+    NSWindow *window;
 
 @public
 	IBOutlet BWSheetController *sheetController;	
@@ -34,6 +34,8 @@
 	IBOutlet NSPopUpButton *voicesSource;
 	IBOutlet NSMenu *twitSourceMenu;
 	IBOutlet NSMenuItem *statusInfo;	
+	IBOutlet NSButton *noRepeat;
+	IBOutlet NSButton *sayTweetSource;
 
 }
 

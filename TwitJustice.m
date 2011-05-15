@@ -266,4 +266,13 @@
 	[super dealloc];	
 }
 
+// window delegate
+
+- (BOOL)windowShouldClose:(id)sender
+{
+	NSLog(@" window should close");
+	[NSApp terminate:sender];
+	return YES;
+}
+
 @end
