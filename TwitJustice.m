@@ -71,10 +71,13 @@
 		//get last used twit source
 		if([[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"] != nil){
 			[twitSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
+			[self performSelector:@selector(updateMenuTwitSource:) withObject:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];			
 		}
+
 		
 	}
 	[favorites release];
+	
 	[self startTwitJustice:@"starting"];
 
 }
@@ -190,27 +193,33 @@
 	
 	//update menu bar twit source label
 	NSLog(@"update twit source in menu %@",[sender titleOfSelectedItem]);	
-	[self performSelector:@selector(selectedListeningTo:) withObject:[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]]];
+	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender titleOfSelectedItem]];
 	
 //	[listening_to_label release];
 }
 
-- (void) selectedListeningTo: (id) sender
+- (void) updateMenuTwitSource: (NSString *)username
 {
 	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
 	for(int i=0; i<[favorites count]; i++){
-		[[[sender menu] itemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]] setState:0];
+		[[twitSourceMenu itemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]] setState:0];
 	}
-	
-	[[sender parentItem] setTitle:[sender title]];
-	[sender setState:1];
+
+	[twitSourceMenu setTitle:username];
+	[[twitSourceMenu itemWithTitle:username] setState:1];
 	
 	//update preferences control
 	//[twitSource selectItemWithTitle:[sender title]];
-	[[NSUserDefaults standardUserDefaults] setValue:[sender title] forKey:@"twitSource"];
+	[[NSUserDefaults standardUserDefaults] setValue:username forKey:@"twitSource"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 }
+
+- (void) selectedListeningTo:(id)sender
+{
+	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender titleOfSelectedItem]];
+}
+
 - (id) getFavorites
 {
 	return [[NSUserDefaults standardUserDefaults] arrayForKey:@"favorites"];
@@ -240,7 +249,7 @@
 
 	}
 
-	[twit_source release];
+	//[twit_source release];
 	//[currentTwitSource release];
 }
 
