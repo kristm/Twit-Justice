@@ -80,10 +80,11 @@
 }
 
 - (void) startTwitJustice:(NSString *)fpath{
-	NSLog(@"starttwitjustice %@",fpath);
+	NSLog(@"starttwitjustice ");
 	[queue cancelAllOperations];
 	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue statusLabel:statusInfo];
 	[queue addOperation: twitreader];
+	NSLog(@"release twitreader %@",twitreader);
 	[twitreader release];		
 } 
 
@@ -179,19 +180,19 @@
 
 - (IBAction) selectedTwitSource: (id) sender
 {
-	NSString *listening_to_label = [[NSString alloc] init];
+	NSString *listening_to_label = [[[NSString alloc] init] autorelease];
 	listening_to_label = [[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"];
 
-	[[twitSourceMenu itemWithTitle:listening_to_label] setState:0];
-		
+//	[[twitSourceMenu itemWithTitle:listening_to_label] setState:0];
+//		
 	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"twitSource"];
-	[[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]] setState:1];
+//	[[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]] setState:1];
 	
 	//update menu bar twit source label
-	//NSLog(@"update menu %@",[twitSourceMenu supermenu]);	
+	NSLog(@"update twit source in menu %@",[sender titleOfSelectedItem]);	
 	[self performSelector:@selector(selectedListeningTo:) withObject:[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]]];
 	
-	[listening_to_label release];
+//	[listening_to_label release];
 }
 
 - (void) selectedListeningTo: (id) sender
@@ -224,23 +225,25 @@
 	[twitSource removeAllItems];		
 	[twitSourceMenu removeAllItems];
 	NSMutableString *twit_source = [[NSString alloc] init];
-	NSString *currentTwitSource = [NSString stringWithString:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
+	//NSString *currentTwitSource = [NSString stringWithString:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
 	NSMenuItem *menuItem;
+	NSLog(@"favorites total %d",[favorites count]);
 	for(int i=0; i<[favorites count]; i++){
 		twit_source = [[favorites objectAtIndex:i] objectForKey:@"username"];
+		NSLog(@"add to favorites %@",twit_source);
 		// add to dropdown in General Preferences
 		[twitSource addItemWithTitle:twit_source];
 		//add to Menubar dropdown
 		menuItem = [twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
-		if([currentTwitSource isEqualToString:[menuItem title]]){
+		/*if([currentTwitSource isEqualToString:[menuItem title]]){
 			[menuItem setState:YES];
-		}
+		}*/
 
 
 	}
 
 	[twit_source release];
-	[currentTwitSource release];
+	//[currentTwitSource release];
 }
 
 - (IBAction) setVoice:(id) sender
@@ -263,6 +266,7 @@
 	[_statusItem release];
 	[queue release];
 	queue = nil;
+	[favList release];
 	[super dealloc];	
 }
 
