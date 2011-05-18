@@ -197,21 +197,19 @@
 
 - (void) selectedListeningTo: (id) sender
 {
-	NSString *listening_to_label = [[NSString alloc] init];
-	listening_to_label = [[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"];
-
-	//disable previous twit source
-	[[[sender menu] itemWithTitle:listening_to_label] setState:0];
+	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
+	for(int i=0; i<[favorites count]; i++){
+		[[[sender menu] itemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]] setState:0];
+	}
 	
 	[[sender parentItem] setTitle:[sender title]];
 	[sender setState:1];
 	
 	//update preferences control
-	[twitSource selectItemWithTitle:[sender title]];
-	NSLog(@"set twit source %@",[sender title]);
+	//[twitSource selectItemWithTitle:[sender title]];
 	[[NSUserDefaults standardUserDefaults] setValue:[sender title] forKey:@"twitSource"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
-	[listening_to_label release];
 }
 - (id) getFavorites
 {
