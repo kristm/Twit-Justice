@@ -53,7 +53,7 @@
 	if([voices count] > 0){
 		for(NSString *voice in voices){
 			shortname = [voice substringFromIndex:33];
-			if([self isValidVoice:voice]){
+			if([self isValidVoice:shortname]){
 				[voicesSource addItemWithTitle:shortname];
 				NSLog(@"voice %@",[voice substringFromIndex:33]);
 			}
@@ -261,6 +261,7 @@
 
 - (BOOL) isValidVoice:(NSString *)voice
 {
+	NSLog(@"is valid %@",voice);
 	return [voice isEqualToString:@"Agnes"] || [voice isEqualToString:@"Albert"] || [voice isEqualToString:@"Bruce"] || 
 			[voice isEqualToString:@"Fred"] || [voice isEqualToString:@"Kathy"] || [voice isEqualToString:@"Princess"] || 
 			[voice isEqualToString:@"Ralph"] || [voice isEqualToString:@"Vicki"] || [voice isEqualToString:@"Victoria"];
@@ -268,7 +269,7 @@
 
 - (void) dealloc
 {
-	NSLog(@"dealloc");
+	NSLog(@"dealloc twitjustice %@",self);
 	[[NSStatusBar systemStatusBar] removeStatusItem:_statusItem];
 	[_statusItem release];
 	[queue release];

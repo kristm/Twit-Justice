@@ -30,11 +30,11 @@
 
 - (void)dealloc
 {
-	NSLog(@"********** dealloc twitreader");
+	NSLog(@"********** dealloc twitreader %@",self);
     [twitData release];
 	[menuLabel release];
 	[speechSynth release];
-	[lastTweet release];
+	//[lastTweet release];
     [super dealloc];
 }
 
@@ -44,13 +44,13 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
 		if([self isCancelled]) break;
-		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 60;
+		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 30;
 		NSLog(@"twit loop %@ %d %@",self,tjInterval,[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 		NSLog(@"connection status %d",[self isConnected]);
 		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
 		NSLog(@"twit source: %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);	
 		NSLog(@"interval: %d",tjInterval);
-		NSLog(@"last tweet %d",lastTweet == nil);
+		//NSLog(@"last tweet %d",lastTweet == nil);
 		if([self isConnected]){
 			[menuLabel setTitle:@"Listening to"];
 			[self readTweet:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
@@ -95,10 +95,9 @@
 							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
 	
 	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-	//NSError *error = nil;
-	
-	//NSData *jsonData = [NSData dataWithContentsOfFile:@"example.json"];
 	NSArray *status = [data yajl_JSON];
+	NSString *lastTweet = [[[NSString alloc] init] autorelease];
+	lastTweet = [[NSUserDefaults standardUserDefaults] stringForKey:@"lastTweet"];
 	int status_count = [status count];
 	NSLog(@"total %d",status_count);
 	NSLog(@"classname %@",[status className]); 
@@ -111,25 +110,30 @@
 		[speechSynth startSpeakingString:[NSString stringWithFormat:@"%@:%@",@"error",[status valueForKey:@"error"]]];
 
 	}else{
-		NSLog(@"status 1 %@",[[status objectAtIndex:0] objectForKey:@"text"] );
-		NSLog(@"say source %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"sayTweetSource"] );	
-		NSLog(@"dont repeat? %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"noRepeat"]);
-		if([[NSUserDefaults standardUserDefaults] boolForKey:@"noRepeat"] == YES){
-			if(lastTweet != nil && [[[status objectAtIndex:0] objectForKey:@"text"] isEqualToString:lastTweet]) {
-				NSLog(@"skipping same tweet");
-				return;
-			}				
+		if([[status objectAtIndex:0] objectForKey:@"text"] != nil){			
+			NSLog(@"status 1 %@",[[status objectAtIndex:0] objectForKey:@"text"] );
+			NSLog(@"say source %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"sayTweetSource"] );	
+			NSLog(@"dont repeat? %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"noRepeat"]);
+			NSLog(@"lasttweet %@",lastTweet);
+			if([[NSUserDefaults standardUserDefaults] boolForKey:@"noRepeat"] == YES){
+				if([[[status objectAtIndex:0] objectForKey:@"text"] isEqualToString:lastTweet]) {
+					NSLog(@"skipping same tweet");
+					return;
+				}				
+			}
+			NSString *justMessage = [[NSString alloc] autorelease];
+			NSString *twitMessage = [[[[status objectAtIndex:0] objectForKey:@"text"] stringByReplacingOccurrencesOfString:@"(cont)" withString:@"continued"] stringByReplacingOccurrencesOfString:@"#" withString:@"hash tag"];
+			if([[NSUserDefaults standardUserDefaults] boolForKey:@"sayTweetSource"] == YES){
+				justMessage = [NSString stringWithFormat:@"%@ says %@",[[[status objectAtIndex:0] objectForKey:@"user"] objectForKey:@"name"],
+							  twitMessage];
+			}else{
+				justMessage = [[status objectAtIndex:0] objectForKey:@"text"];
+			}
+			[speechSynth startSpeakingString:justMessage];
+			//lastTweet = [NSString stringWithString: twitMessage];
+			[[NSUserDefaults standardUserDefaults] setValue:[[status objectAtIndex:0] objectForKey:@"text"] forKey:@"lastTweet"];
+			
 		}
-		NSString *justMessage = [[NSString alloc] autorelease];
-		NSString *twitMessage = [[[status objectAtIndex:0] objectForKey:@"text"] stringByReplacingOccurrencesOfString:@"(cont)" withString:@"continued"];
-		if([[NSUserDefaults standardUserDefaults] boolForKey:@"sayTweetSource"] == YES){
-			justMessage = [NSString stringWithFormat:@"%@ says %@",[[[status objectAtIndex:0] objectForKey:@"user"] objectForKey:@"name"],
-						  twitMessage];
-		}else{
-			justMessage = [[status objectAtIndex:0] objectForKey:@"text"];
-		}
-		[speechSynth startSpeakingString:justMessage];
-		lastTweet = [NSString stringWithString: twitMessage];
 	}
 	
 }

@@ -15,7 +15,7 @@
 @private
 	NSMenuItem *menuLabel;
 	NSSpeechSynthesizer *speechSynth;
-	NSMutableString	*lastTweet;
+	//NSMutableString	*lastTweet;
 @public
 	NSString*			twitData;
 	NSOperationQueue*	queue;	
