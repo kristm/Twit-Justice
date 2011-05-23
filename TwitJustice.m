@@ -217,7 +217,8 @@
 
 - (void) selectedListeningTo:(id)sender
 {
-	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender titleOfSelectedItem]];
+	//NSLog(@"update twitsource from menubar %@",sender);
+	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender title]];
 }
 
 - (id) getFavorites
