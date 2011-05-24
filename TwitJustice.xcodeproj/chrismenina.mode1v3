@@ -278,13 +278,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
-									<integer>1</integer>
-									<integer>0</integer>
+									<integer>34</integer>
+									<integer>33</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 505}}</string>
+							<string>{{0, 107}, {186, 505}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -445,7 +444,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitJustice.m</string>
+								<string>TwitReader.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -453,21 +452,21 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TwitJustice.m</string>
+										<string>TwitReader.m</string>
 										<key>_historyCapacity</key>
 										<integer>20</integer>
 										<key>bookmark</key>
-										<string>5BF998AB138A95CD00F86F8E</string>
+										<string>5BF99926138BE9C300F86F8E</string>
 										<key>history</key>
 										<array>
 											<string>5BA52CA4136322EC00E88935</string>
 											<string>5BA94FE01383F8A1001E90C7</string>
-											<string>5BCCAA6213894D6E00843BCE</string>
-											<string>5BF9985A1389771C00F86F8E</string>
 											<string>5BF99876138977E100F86F8E</string>
-											<string>5BF9988F138A2DE400F86F8E</string>
 											<string>5BF99890138A2DE400F86F8E</string>
-											<string>5BF99891138A2DE400F86F8E</string>
+											<string>5BF998D2138A9E5800F86F8E</string>
+											<string>5BF998F2138AA24100F86F8E</string>
+											<string>5BF99913138AA7B800F86F8E</string>
+											<string>5BF99914138AA7B800F86F8E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -673,9 +672,9 @@
 	<array>
 		<string>5BF9989E138A2DE400F86F8E</string>
 		<string>5BF9989F138A2DE400F86F8E</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5B087D0113595ECB0096C05E</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/chrismenina/src/cocoa/TwitJustice/TwitJustice.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -1058,7 +1057,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

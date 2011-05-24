@@ -55,13 +55,13 @@
 			shortname = [voice substringFromIndex:33];
 			if([self isValidVoice:shortname]){
 				[voicesSource addItemWithTitle:shortname];
-				NSLog(@"voice %@",[voice substringFromIndex:33]);
+				//NSLog(@"voice %@",[voice substringFromIndex:33]);
 			}
 				
 		}
 		[voicesSource selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
 	}
-	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
+	NSArray *favorites = [[[NSArray alloc] initWithArray:[self getFavorites]] autorelease]; 
 
 	if([favorites count] > 0){
 		[favRecords setArray:favorites];
@@ -76,7 +76,9 @@
 
 		
 	}
-	[favorites release];
+	//[favorites release];
+	//[voices release];
+	//[defaults release];
 	
 	[self startTwitJustice:@"starting"];
 
@@ -200,7 +202,7 @@
 
 - (void) updateMenuTwitSource: (NSString *)username
 {
-	NSArray *favorites = [[NSArray alloc] initWithArray:[self getFavorites]];
+	NSArray *favorites = [[[NSArray alloc] initWithArray:[self getFavorites]] autorelease];
 	for(int i=0; i<[favorites count]; i++){
 		[[twitSourceMenu itemWithTitle:[[favorites objectAtIndex:i] objectForKey:@"username"]] setState:0];
 	}
@@ -262,7 +264,7 @@
 
 - (BOOL) isValidVoice:(NSString *)voice
 {
-	NSLog(@"is valid %@",voice);
+	//NSLog(@"is valid %@",voice);
 	return [voice isEqualToString:@"Agnes"] || [voice isEqualToString:@"Albert"] || [voice isEqualToString:@"Bruce"] || 
 			[voice isEqualToString:@"Fred"] || [voice isEqualToString:@"Kathy"] || [voice isEqualToString:@"Princess"] || 
 			[voice isEqualToString:@"Ralph"] || [voice isEqualToString:@"Vicki"] || [voice isEqualToString:@"Victoria"];

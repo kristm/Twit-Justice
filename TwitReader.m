@@ -34,7 +34,7 @@
     [twitData release];
 	[menuLabel release];
 	[speechSynth release];
-	//[lastTweet release];
+	//[lastTweet release];// causes random crashes after waking up
     [super dealloc];
 }
 
@@ -130,11 +130,12 @@
 				justMessage = [[status objectAtIndex:0] objectForKey:@"text"];
 			}
 			[speechSynth startSpeakingString:justMessage];
-			//lastTweet = [NSString stringWithString: twitMessage];
 			[[NSUserDefaults standardUserDefaults] setValue:[[status objectAtIndex:0] objectForKey:@"text"] forKey:@"lastTweet"];
 			
 		}
 	}
+	//[data release];
+	//[status release];
 	
 }
 
