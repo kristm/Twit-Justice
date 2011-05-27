@@ -265,7 +265,7 @@
 - (BOOL) isValidVoice:(NSString *)voice
 {
 	//NSLog(@"is valid %@",voice);
-	return [voice isEqualToString:@"Agnes"] || [voice isEqualToString:@"Albert"] || [voice isEqualToString:@"Bruce"] || 
+	return [voice isEqualToString:@"Agnes"] || [voice isEqualToString:@"Alex"] || [voice isEqualToString:@"Bruce"] || 
 			[voice isEqualToString:@"Fred"] || [voice isEqualToString:@"Kathy"] || [voice isEqualToString:@"Princess"] || 
 			[voice isEqualToString:@"Ralph"] || [voice isEqualToString:@"Vicki"] || [voice isEqualToString:@"Victoria"];
 }

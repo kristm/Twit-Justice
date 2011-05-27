@@ -86,11 +86,15 @@
 }
 
 - (NSString *) getVoiceIdentifier{
+	NSLog(@"use voice %@",[NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]]);
 	return [NSString stringWithFormat:@"com.apple.speech.synthesis.voice.%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]];
 }
 
 - (void) readTweet:(NSString *)twitSource
 {
+    //get profile pic of user: http://api.twitter.com/1/users/profile_image/lovipoe.json?size=reasonably_small
+    //size for reasonably_small is undocumented though
+	// add try catch here
 	NSURLRequest *request = [NSURLRequest requestWithURL:
 							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
 	
