@@ -123,10 +123,10 @@
 	NSLog(@"notification from twitreader %@",[aNotification name]);
 	if ([[ aNotification name ] isEqualTo: @"NewTweet" ]) {
 		NSLog(@"show new tweet");
-		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
+		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
 	}else if([[ aNotification name ] isEqualTo: @"TweetError" ]) {
 		NSLog(@"error retrieving tweet");
-		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
+		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
 	}else if ([[ aNotification name] isEqualTo:@"OkNet"]) {
 		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
 	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
