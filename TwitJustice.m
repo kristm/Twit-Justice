@@ -43,7 +43,14 @@
 			   selector:@selector(machineWillShutDown:)
 				   name:NSWorkspaceWillPowerOffNotification 
 				 object:NULL];	
-
+	
+    [[ NSDistributedNotificationCenter defaultCenter ] addObserver: self
+														  selector: @selector(twitNotification:)
+															  name: nil
+															object: @"TwitReader"
+												suspensionBehavior: NSNotificationSuspensionBehaviorCoalesce
+	 ];
+	
 	NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:10],@"tjInterval", 
 							  [NSString stringWithString:@"Alex"],@"voice",nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults: defaults];	
@@ -87,7 +94,7 @@
 - (void) startTwitJustice:(NSString *)fpath{
 	NSLog(@"starttwitjustice ");
 	[queue cancelAllOperations];
-	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue statusLabel:statusInfo];
+	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue];
 	[queue addOperation: twitreader];
 	NSLog(@"release twitreader %@",twitreader);
 	[twitreader release];		
@@ -109,6 +116,22 @@
 	[self performSelector: @selector(startTwitJustice:)
 			   withObject:@"start from wake"
 			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];
+}
+
+-(void)twitNotification:(NSNotification*)aNotification
+{
+	NSLog(@"notification from twitreader %@",[aNotification name]);
+	if ([[ aNotification name ] isEqualTo: @"NewTweet" ]) {
+		NSLog(@"show new tweet");
+		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
+	}else if([[ aNotification name ] isEqualTo: @"TweetError" ]) {
+		NSLog(@"error retrieving tweet");
+		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
+	}else if ([[ aNotification name] isEqualTo:@"OkNet"]) {
+		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
+	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
+		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
+	}
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex

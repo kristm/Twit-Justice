@@ -36,6 +36,7 @@
 	IBOutlet NSMenuItem *statusInfo;	
 	IBOutlet NSButton *noRepeat;
 	IBOutlet NSButton *sayTweetSource;
+	//IBOutlet NSTextField *radioTweet;
 
 }
 
@@ -49,6 +50,7 @@
 - (IBAction) selectedTwitSource: (id) sender;
 - (IBAction) setVoice:(id) sender;
 
+- (void)twitNotification:(NSNotification*)aNotification;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (id)getFavorites;

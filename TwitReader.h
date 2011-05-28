@@ -13,7 +13,6 @@
 
 @interface TwitReader : NSOperation {
 @private
-	NSMenuItem *menuLabel;
 	NSSpeechSynthesizer *speechSynth;
 	//NSMutableString	*lastTweet;
 @public
@@ -23,6 +22,6 @@
 
 }
 
-- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq statusLabel:(NSMenuItem *)menuLbl;
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq;
 
 @end

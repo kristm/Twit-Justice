@@ -18,12 +18,10 @@
 
 @implementation TwitReader
 
-- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq statusLabel:(NSMenuItem *)menuLbl
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq
 {
     self = [super init];	
 	twitData = [pp retain];
-	//menuLabel = menuLbl; // whats the difference between [menuLbl retail]?
-	menuLabel = [menuLbl retain];
 	speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:[self getVoiceIdentifier]];
 	return self;
 }
@@ -32,7 +30,6 @@
 {
 	NSLog(@"********** dealloc twitreader %@",self);
     [twitData release];
-	[menuLabel release];
 	[speechSynth release];
     [super dealloc];
 }
@@ -43,7 +40,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	while (TRUE) {
 		if([self isCancelled]) break;
-		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 30;
+		tjInterval = [[NSUserDefaults standardUserDefaults] integerForKey:@"tjInterval"] * 60;
 		NSLog(@"twit loop %@ %d %@",self,tjInterval,[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 		NSLog(@"connection status %d",[self isConnected]);
 		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
@@ -51,10 +48,13 @@
 		NSLog(@"interval: %d",tjInterval);
 		//NSLog(@"last tweet %d",lastTweet == nil);
 		if([self isConnected]){
-			[menuLabel setTitle:@"Listening to"];
+			NSDictionary *menuTitle = [NSDictionary dictionaryWithObject:@"Listening to" forKey:@"message"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"OkNet" object:@"TwitReader" userInfo:menuTitle];
 			[self readTweet:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
 		}else{
-			[menuLabel setTitle:@"Not Connected"];
+			NSDictionary *menuTitle = [NSDictionary dictionaryWithObject:@"Not Connected" forKey:@"message"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"NoNet" object:@"TwitReader" userInfo:menuTitle];
+
 		}
 		
 		sleep(tjInterval);
@@ -111,6 +111,8 @@
 		NSLog(@"proabably an error");
 		NSLog(@"%@",[status valueForKey:@"error"]);
 		[speechSynth startSpeakingString:[NSString stringWithFormat:@"%@:%@",@"error",[status valueForKey:@"error"]]];
+		NSDictionary *twitObject = [NSDictionary dictionaryWithObject:@"error getting tweet" forKey:@"message"];
+		[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"TweetError" object:@"TwitReader" userInfo:twitObject];
 
 	}else{
 		if([[status objectAtIndex:0] objectForKey:@"text"] != nil){			
@@ -134,6 +136,9 @@
 			}
 			[speechSynth startSpeakingString:justMessage];
 			[[NSUserDefaults standardUserDefaults] setValue:[[status objectAtIndex:0] objectForKey:@"text"] forKey:@"lastTweet"];
+			NSDictionary *twitObject = [NSDictionary dictionaryWithObject:twitMessage forKey:@"message"];
+			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"NewTweet" object:@"TwitReader" userInfo:twitObject];
+
 			
 		}
 	}
