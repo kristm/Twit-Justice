@@ -15,6 +15,7 @@
 @private
 	NSSpeechSynthesizer *speechSynth;
 	//NSMutableString	*lastTweet;
+	NSImageView *radioThumb;
 @public
 	NSString*			twitData;
 	NSOperationQueue*	queue;	
@@ -22,6 +23,6 @@
 
 }
 
-- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq;
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq imageThumb:(NSImageView *)iThumb;
 
 @end

@@ -16,6 +16,8 @@
 		5BBE671513900797001BBFC5 /* TwitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE671413900797001BBFC5 /* TwitView.m */; };
 		5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
 		5BC11EA5137D9CC800F8DEEC /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
+		5BEFEFFE1391446400F0BD07 /* twitui_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEFEFFC1391446400F0BD07 /* twitui_back.png */; };
+		5BEFEFFF1391446400F0BD07 /* twitui_front.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEFEFFD1391446400F0BD07 /* twitui_front.png */; };
 		5BF57DC2135B305100367132 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF57DC1135B305100367132 /* BWToolkitFramework.framework */; };
 		5BF57E3E135B315D00367132 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BF57DC1135B305100367132 /* BWToolkitFramework.framework */; };
 		5BF99870138977CB00F86F8E /* twitjustice.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5BF9986F138977CB00F86F8E /* twitjustice.icns */; };
@@ -66,6 +68,8 @@
 		5BBE671313900797001BBFC5 /* TwitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitView.h; sourceTree = "<group>"; };
 		5BBE671413900797001BBFC5 /* TwitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitView.m; sourceTree = "<group>"; };
 		5BC11E95137D9CAA00F8DEEC /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
+		5BEFEFFC1391446400F0BD07 /* twitui_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitui_back.png; sourceTree = "<group>"; };
+		5BEFEFFD1391446400F0BD07 /* twitui_front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitui_front.png; sourceTree = "<group>"; };
 		5BF57DC1135B305100367132 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		5BF9986F138977CB00F86F8E /* twitjustice.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = twitjustice.icns; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TwitJustice-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TwitJustice-Info.plist"; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				5BBE670E139003A0001BBFC5 /* twitui.png */,
+				5BEFEFFC1391446400F0BD07 /* twitui_back.png */,
+				5BEFEFFD1391446400F0BD07 /* twitui_front.png */,
 				5B6CB4CA135968F2002955AF /* twitjustice.tiff */,
 				5BF9986F138977CB00F86F8E /* twitjustice.icns */,
 				8D1107310486CEB800E47090 /* TwitJustice-Info.plist */,
@@ -229,6 +235,8 @@
 				5B6CB4CB135968F2002955AF /* twitjustice.tiff in Resources */,
 				5BF99870138977CB00F86F8E /* twitjustice.icns in Resources */,
 				5BBE670F139003A0001BBFC5 /* twitui.png in Resources */,
+				5BEFEFFE1391446400F0BD07 /* twitui_back.png in Resources */,
+				5BEFEFFF1391446400F0BD07 /* twitui_front.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

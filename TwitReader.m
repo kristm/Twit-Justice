@@ -18,10 +18,11 @@
 
 @implementation TwitReader
 
-- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq
+- (id)initWithData:(NSString *)pp operationClass:(Class)cc queue:(NSOperationQueue *)qq imageThumb:(NSImageView *)iThumb
 {
     self = [super init];	
 	twitData = [pp retain];
+	radioThumb = [iThumb retain];
 	speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:[self getVoiceIdentifier]];
 	return self;
 }
@@ -94,6 +95,14 @@
     //get profile pic of user: http://api.twitter.com/1/users/profile_image/lovipoe.json?size=reasonably_small
     //size for reasonably_small is undocumented though
 	// add try catch here
+	NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfURL:
+							  [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
+	
+	NSLog(@"image %@ %@",[NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]],twitSourceImg);
+	if (twitSourceImg != nil) {
+		[radioThumb setImage:twitSourceImg];
+	}
+	
 	NSURLRequest *request = [NSURLRequest requestWithURL:
 							 [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=%@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
 	
@@ -107,7 +116,7 @@
 	NSLog(@"error class %@",[[status valueForKey:@"error"] className]); // should be string if error, array if not
 	[speechSynth setVoice:[self getVoiceIdentifier]];
 	NSString *status_class = [status className];
-	if([status_class isEqualToString:@"NSCFDictionary"]){ // this is a cheap ass version of error checking, i wonder if there's a better way
+	if([status_class isEqualToString:@"NSCFDictionary"] || status_count == 0){ // this is a cheap ass version of error checking, i wonder if there's a better way
 		NSLog(@"proabably an error");
 		NSLog(@"%@",[status valueForKey:@"error"]);
 		[speechSynth startSpeakingString:[NSString stringWithFormat:@"%@:%@",@"error",[status valueForKey:@"error"]]];

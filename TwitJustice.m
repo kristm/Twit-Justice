@@ -94,7 +94,7 @@
 - (void) startTwitJustice:(NSString *)fpath{
 	NSLog(@"starttwitjustice ");
 	[queue cancelAllOperations];
-	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue];
+	TwitReader* twitreader = [[TwitReader alloc] initWithData:@"meow" operationClass:nil queue:queue imageThumb:radioThumb];
 	[queue addOperation: twitreader];
 	NSLog(@"release twitreader %@",twitreader);
 	[twitreader release];		
@@ -123,10 +123,10 @@
 	NSLog(@"notification from twitreader %@",[aNotification name]);
 	if ([[ aNotification name ] isEqualTo: @"NewTweet" ]) {
 		NSLog(@"show new tweet");
-		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
+		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
 	}else if([[ aNotification name ] isEqualTo: @"TweetError" ]) {
 		NSLog(@"error retrieving tweet");
-		//[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
+		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
 	}else if ([[ aNotification name] isEqualTo:@"OkNet"]) {
 		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
 	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
@@ -219,6 +219,7 @@
 	//update menu bar twit source label
 	NSLog(@"update twit source in menu %@",[sender titleOfSelectedItem]);	
 	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender titleOfSelectedItem]];
+	//[radioTweetSource setStringValue:[sender titleOfSelectedItem]];
 	
 //	[listening_to_label release];
 }
@@ -232,12 +233,27 @@
 
 	[twitSourceMenu setTitle:username];
 	[[twitSourceMenu itemWithTitle:username] setState:1];
+	[radioTweetSource setStringValue:username];
+	
+	//reset tweet message
+	[radioTweet setStringValue:@"waiting for next tweet"];
 	
 	//update preferences control
 	//[twitSource selectItemWithTitle:[sender title]];
 	[[NSUserDefaults standardUserDefaults] setValue:username forKey:@"twitSource"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
+	
+	//update tweet profile image in ui ... this could just be a bg process
+	NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfURL:
+							  [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
+	
+	NSLog(@"image %@ %@",[NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]],twitSourceImg);
+	if (twitSourceImg != nil) {
+		[radioThumb setImage:twitSourceImg];
+	}
+	
+	
 }
 
 - (void) selectedListeningTo:(id)sender

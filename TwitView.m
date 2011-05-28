@@ -20,7 +20,7 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-	NSImage *radioImage = [NSImage imageNamed:@"twitui"];
+	NSImage *radioImage = [NSImage imageNamed:@"twitui_front"];
 	
 	NSPoint backgroundCenter;
 	backgroundCenter.x = [self bounds].size.width / 2;

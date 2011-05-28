@@ -36,7 +36,9 @@
 	IBOutlet NSMenuItem *statusInfo;	
 	IBOutlet NSButton *noRepeat;
 	IBOutlet NSButton *sayTweetSource;
-	//IBOutlet NSTextField *radioTweet;
+	IBOutlet NSTextField *radioTweet;
+	IBOutlet NSTextField *radioTweetSource;
+	IBOutlet NSImageView *radioThumb;
 
 }
 
