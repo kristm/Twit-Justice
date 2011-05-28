@@ -34,7 +34,6 @@
     [twitData release];
 	[menuLabel release];
 	[speechSynth release];
-	//[lastTweet release];// causes random crashes after waking up
     [super dealloc];
 }
 
