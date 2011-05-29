@@ -39,6 +39,7 @@
 	IBOutlet NSTextField *radioTweet;
 	IBOutlet NSTextField *radioTweetSource;
 	IBOutlet NSImageView *radioThumb;
+	IBOutlet NSWindow *radioBack;
 
 }
 

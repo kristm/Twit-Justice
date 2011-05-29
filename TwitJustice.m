@@ -329,4 +329,25 @@
 	return YES;
 }
 
+- (void) awakeFromNib
+{
+	
+	//[radioBack setBackgroundColor:[NSColor orangeColor]];
+	NSSize backgroundSize = [radioBack frame].size; NSImage *backgroundImage = [[NSImage alloc] initWithSize:backgroundSize];		NSRect backgroundRect = NSMakeRect(0,0,[backgroundImage size].width, [backgroundImage size].height);
+	// Load whatever object will be in the center into an NSImage.
+	NSImage *objectImage = [NSImage imageNamed:@"twitui_back"];
+	// Find the point at which to draw the object.
+	NSPoint backgroundCenter; backgroundCenter.x = backgroundRect.size.width / 2; backgroundCenter.y = backgroundRect.size.height / 2;
+	NSPoint drawPoint = backgroundCenter; drawPoint.x -= [objectImage size].width / 2; drawPoint.y -= [objectImage size].height / 2;
+	// Fill the background with a color and draw the object on top of it.
+	[backgroundImage lockFocus]; [[NSColor whiteColor] set]; NSRectFill(backgroundRect); [objectImage drawAtPoint:drawPoint
+																										 fromRect:NSZeroRect operation:NSCompositeSourceOver
+																										 fraction:1.0];			
+	[backgroundImage unlockFocus];
+	// Set our background image as the window's background color.
+	[radioBack setBackgroundColor: [NSColor colorWithPatternImage:backgroundImage]];
+	// Release the image.
+	[backgroundImage release];
+}
+
 @end

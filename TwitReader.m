@@ -145,7 +145,7 @@
 			}
 			[speechSynth startSpeakingString:justMessage];
 			[[NSUserDefaults standardUserDefaults] setValue:[[status objectAtIndex:0] objectForKey:@"text"] forKey:@"lastTweet"];
-			NSDictionary *twitObject = [NSDictionary dictionaryWithObject:twitMessage forKey:@"message"];
+			NSDictionary *twitObject = [NSDictionary dictionaryWithObject:[[status objectAtIndex:0] objectForKey:@"text"] forKey:@"message"];
 			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"NewTweet" object:@"TwitReader" userInfo:twitObject];
 
 			
