@@ -56,6 +56,11 @@
 		}else{
 			NSDictionary *menuTitle = [NSDictionary dictionaryWithObject:@"Not Connected" forKey:@"message"];
 			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"NoNet" object:@"TwitReader" userInfo:menuTitle];
+			
+			NSBundle *bundle = [NSBundle mainBundle];
+			NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"defaultpic"]];
+			NSLog(@"no net image %@",twitSourceImg);			
+			[radioThumb setImage:twitSourceImg];			
 
 		}
 		

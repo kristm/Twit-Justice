@@ -12,6 +12,7 @@
 		5B674DF11391F35A00BEE756 /* ImageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */; };
 		5B6CB4CB135968F2002955AF /* twitjustice.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B6CB4CA135968F2002955AF /* twitjustice.tiff */; };
 		5B6CB5041359BD2A002955AF /* TwitReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */; };
+		5B7807C61393E0D00046497B /* defaultpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7807C51393E0D00046497B /* defaultpic.png */; };
 		5B7B61D613686EEF00997D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */; };
 		5BBE671513900797001BBFC5 /* TwitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE671413900797001BBFC5 /* TwitView.m */; };
 		5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
@@ -65,6 +66,7 @@
 		5B6CB4CA135968F2002955AF /* twitjustice.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = twitjustice.tiff; sourceTree = "<group>"; };
 		5B6CB5021359BD2A002955AF /* TwitReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitReader.h; sourceTree = "<group>"; };
 		5B6CB5031359BD2A002955AF /* TwitReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitReader.m; sourceTree = "<group>"; };
+		5B7807C51393E0D00046497B /* defaultpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultpic.png; sourceTree = "<group>"; };
 		5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5BBE671313900797001BBFC5 /* TwitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitView.h; sourceTree = "<group>"; };
 		5BBE671413900797001BBFC5 /* TwitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitView.m; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B7807C51393E0D00046497B /* defaultpic.png */,
 				5BEFEFFC1391446400F0BD07 /* twitui_back.png */,
 				5BEFEFFD1391446400F0BD07 /* twitui_front.png */,
 				5B6CB4CA135968F2002955AF /* twitjustice.tiff */,
@@ -238,6 +241,7 @@
 				5BF99870138977CB00F86F8E /* twitjustice.icns in Resources */,
 				5BEFEFFE1391446400F0BD07 /* twitui_back.png in Resources */,
 				5BEFEFFF1391446400F0BD07 /* twitui_front.png in Resources */,
+				5B7807C61393E0D00046497B /* defaultpic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +318,7 @@
 				GCC_PREFIX_HEADER = TwitJustice_Prefix.pch;
 				INFOPLIST_FILE = "TwitJustice-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = TwitJustice;
 			};
 			name = Release;
@@ -336,11 +341,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};

@@ -38,6 +38,11 @@
 		if (twitSourceImg != nil) {
 			[radioThumb setImage:twitSourceImg];
 		}		
+	}else{
+		NSBundle *bundle = [NSBundle mainBundle];
+		NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"defaultpic"]];
+		NSLog(@"no net image %@",twitSourceImg);
+		[radioThumb setImage:twitSourceImg];
 	}
 	
 	[pool release];
