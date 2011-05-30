@@ -8,6 +8,7 @@
 
 #import "TwitJustice.h"
 #import "TwitReader.h"
+#import "ImageFetcher.h"
 
 @interface TwitJustice(Private)
 - (void) updateTwitSource:(NSArray *) favorites;
@@ -98,6 +99,9 @@
 	[queue addOperation: twitreader];
 	NSLog(@"release twitreader %@",twitreader);
 	[twitreader release];		
+	if([[NSUserDefaults standardUserDefaults] stringForKey:@"lastTweet"] != nil){
+		[radioTweet setStringValue:[[NSUserDefaults standardUserDefaults] stringForKey:@"lastTweet"]];
+	}
 } 
 
 - (void) machineWillSleep:(NSNotification *)notification{
@@ -245,13 +249,16 @@
 	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 	
 	//update tweet profile image in ui ... this could just be a bg process
-	NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfURL:
+	/*NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfURL:
 							  [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
 	
 	NSLog(@"image %@ %@",[NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]],twitSourceImg);
 	if (twitSourceImg != nil) {
 		[radioThumb setImage:twitSourceImg];
-	}
+	}*/
+	ImageFetcher* imgFetch = [[ImageFetcher alloc] init:radioThumb];
+	[queue addOperation:imgFetch];
+	[imgFetch release];
 	
 	
 }
@@ -274,7 +281,6 @@
 	[twitSource removeAllItems];		
 	[twitSourceMenu removeAllItems];
 	NSMutableString *twit_source = [[NSString alloc] init];
-	//NSString *currentTwitSource = [NSString stringWithString:[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]];
 	NSMenuItem *menuItem;
 	NSLog(@"favorites total %d",[favorites count]);
 	for(int i=0; i<[favorites count]; i++){
@@ -284,15 +290,9 @@
 		[twitSource addItemWithTitle:twit_source];
 		//add to Menubar dropdown
 		menuItem = [twitSourceMenu addItemWithTitle:twit_source action:@selector(selectedListeningTo:) keyEquivalent:@""];
-		/*if([currentTwitSource isEqualToString:[menuItem title]]){
-			[menuItem setState:YES];
-		}*/
-
 
 	}
 
-	//[twit_source release];
-	//[currentTwitSource release];
 }
 
 - (IBAction) setVoice:(id) sender

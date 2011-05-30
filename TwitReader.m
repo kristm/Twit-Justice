@@ -32,6 +32,7 @@
 	NSLog(@"********** dealloc twitreader %@",self);
     [twitData release];
 	[speechSynth release];
+	[radioThumb release];
     [super dealloc];
 }
 
