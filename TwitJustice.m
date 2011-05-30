@@ -350,4 +350,32 @@
 	[backgroundImage release];
 }
 
+- (IBAction) aboutWindowController: (id) sender
+{
+	[aboutWindow setLevel:NSStatusWindowLevel];
+	[aboutWindow makeKeyAndOrderFront:nil];
+	[aboutWindow center];
+}
+
+- (NSString *)versionString
+{
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSDictionary *infoDict = [mainBundle infoDictionary];
+	
+    //NSString *mainString = [infoDict valueForKey:@"CFBundleShortVersionString"];
+    NSString *subString = [infoDict valueForKey:@"CFBundleVersion"];
+    //return [NSString stringWithFormat:@"Version %@ (%@)", mainString, subString];
+	return [NSString stringWithFormat:@"Version %@", subString];
+}
+
+- (NSString*)copyrightString
+{
+    return @"Copyright © 2011 \nKrist Menina\nkrist@hellowala.org";
+}
+
+- (float)appNameLabelFontSize
+{
+    return 16.0;
+}
+
 @end

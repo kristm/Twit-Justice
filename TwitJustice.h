@@ -40,6 +40,7 @@
 	IBOutlet NSTextField *radioTweetSource;
 	IBOutlet NSImageView *radioThumb;
 	IBOutlet NSWindow *radioBack;
+	IBOutlet NSWindow *aboutWindow;
 
 }
 
@@ -52,9 +53,14 @@
 - (IBAction) removeFavorite: (id) sender;
 - (IBAction) selectedTwitSource: (id) sender;
 - (IBAction) setVoice:(id) sender;
+- (IBAction) aboutWindowController: (id) sender;
 
 - (void)twitNotification:(NSNotification*)aNotification;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (id)getFavorites;
+- (NSString*)copyrightString;
+- (NSString *)versionString;
+- (float)appNameLabelFontSize;
+
 @end
