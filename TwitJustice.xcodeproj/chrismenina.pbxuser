@@ -18,9 +18,9 @@
 	};
 	256AC3D90F4B6AC300CF3369 /* TwitJustice.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 4693}}";
-			sepNavSelRange = "{3386, 0}";
-			sepNavVisRange = "{2876, 638}";
+			sepNavIntBoundsRect = "{{0, 0}, {970, 4667}}";
+			sepNavSelRange = "{3393, 0}";
+			sepNavVisRange = "{2812, 705}";
 			sepNavWindowFrame = "{{15, 106}, {1152, 667}}";
 		};
 	};
@@ -121,8 +121,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 328447617;
-			PBXWorkspaceStateSaveDate = 328447617;
+			PBXPerProjectTemplateStateSaveDate = 328457705;
+			PBXWorkspaceStateSaveDate = 328457705;
 		};
 		perUserProjectItems = {
 			5B674DF31391F38300BEE756 = 5B674DF31391F38300BEE756 /* PBXTextBookmark */;
@@ -134,18 +134,18 @@
 			5B674E251391FE6300BEE756 = 5B674E251391FE6300BEE756 /* PBXTextBookmark */;
 			5B674E271391FE6300BEE756 = 5B674E271391FE6300BEE756 /* PBXTextBookmark */;
 			5B674E291391FE6300BEE756 = 5B674E291391FE6300BEE756 /* PBXTextBookmark */;
-			5B674E3113922C7300BEE756 = 5B674E3113922C7300BEE756 /* PBXTextBookmark */;
-			5B674E3213922C7300BEE756 = 5B674E3213922C7300BEE756 /* PBXTextBookmark */;
 			5B674E3313922C7300BEE756 = 5B674E3313922C7300BEE756 /* PBXTextBookmark */;
-			5B674E3513922C7300BEE756 = 5B674E3513922C7300BEE756 /* PBXTextBookmark */;
 			5B6CB4F3135977E5002955AF = 5B6CB4F3135977E5002955AF /* PlistBookmark */;
 			5B6CB4F4135977E5002955AF = 5B6CB4F4135977E5002955AF /* PBXBookmark */;
+			5B7807B11393DDF00046497B /* PBXTextBookmark */ = 5B7807B11393DDF00046497B /* PBXTextBookmark */;
+			5B7807B21393DDF00046497B /* PBXTextBookmark */ = 5B7807B21393DDF00046497B /* PBXTextBookmark */;
 			5B79FA10137DF7D500421CFB = 5B79FA10137DF7D500421CFB /* PBXTextBookmark */;
 			5B7B61AF13686CE900997D0D = 5B7B61AF13686CE900997D0D /* PBXTextBookmark */;
 			5B99849F139351AC0059AFA8 = 5B99849F139351AC0059AFA8 /* PBXTextBookmark */;
-			5B9984A0139351AC0059AFA8 = 5B9984A0139351AC0059AFA8 /* PBXTextBookmark */;
-			5B9984B01393B6870059AFA8 /* PBXTextBookmark */ = 5B9984B01393B6870059AFA8 /* PBXTextBookmark */;
-			5B9984B11393B6870059AFA8 /* PBXTextBookmark */ = 5B9984B11393B6870059AFA8 /* PBXTextBookmark */;
+			5B9984BF1393CDB50059AFA8 = 5B9984BF1393CDB50059AFA8 /* PBXTextBookmark */;
+			5B9984C01393CDB50059AFA8 = 5B9984C01393CDB50059AFA8 /* PBXTextBookmark */;
+			5B9984C11393CDB50059AFA8 = 5B9984C11393CDB50059AFA8 /* PBXTextBookmark */;
+			5B9984C21393CDB50059AFA8 = 5B9984C21393CDB50059AFA8 /* PBXTextBookmark */;
 			5B9B44BD137FFDFB00D86CEE = 5B9B44BD137FFDFB00D86CEE /* PBXTextBookmark */;
 			5B9B44ED138001A000D86CEE = 5B9B44ED138001A000D86CEE /* PBXTextBookmark */;
 			5BA52CA4136322EC00E88935 = 5BA52CA4136322EC00E88935 /* PBXBookmark */;
@@ -216,9 +216,9 @@
 	};
 	5B674DF01391F35A00BEE756 /* ImageFetcher.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {970, 910}}";
-			sepNavSelRange = "{560, 7}";
-			sepNavVisRange = "{367, 532}";
+			sepNavIntBoundsRect = "{{0, 0}, {970, 884}}";
+			sepNavSelRange = "{1236, 0}";
+			sepNavVisRange = "{1000, 361}";
 		};
 	};
 	5B674DF31391F38300BEE756 /* PBXTextBookmark */ = {
@@ -311,26 +311,6 @@
 		vrLen = 539;
 		vrLoc = 609;
 	};
-	5B674E3113922C7300BEE756 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
-		name = "ImageFetcher.m: 59";
-		rLen = 0;
-		rLoc = 1265;
-		rType = 0;
-		vrLen = 356;
-		vrLoc = 1005;
-	};
-	5B674E3213922C7300BEE756 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
-		name = "TwitJustice.m: 103";
-		rLen = 0;
-		rLoc = 3386;
-		rType = 0;
-		vrLen = 638;
-		vrLoc = 2876;
-	};
 	5B674E3313922C7300BEE756 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5B6CB5031359BD2A002955AF /* TwitReader.m */;
@@ -340,16 +320,6 @@
 		rType = 0;
 		vrLen = 875;
 		vrLoc = 5919;
-	};
-	5B674E3513922C7300BEE756 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
-		name = "ImageFetcher.m: 35";
-		rLen = 7;
-		rLoc = 560;
-		rType = 0;
-		vrLen = 510;
-		vrLoc = 386;
 	};
 	5B6CB4F3135977E5002955AF /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -382,6 +352,26 @@
 			sepNavWindowFrame = "{{38, 85}, {1152, 667}}";
 		};
 	};
+	5B7807B11393DDF00046497B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
+		name = "ImageFetcher.m: 57";
+		rLen = 0;
+		rLoc = 1236;
+		rType = 0;
+		vrLen = 361;
+		vrLoc = 1000;
+	};
+	5B7807B21393DDF00046497B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
+		name = "TwitJustice.m: 106";
+		rLen = 0;
+		rLoc = 3393;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 2812;
+	};
 	5B79FA10137DF7D500421CFB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5B6CB5021359BD2A002955AF /* TwitReader.h */;
@@ -412,17 +402,7 @@
 		vrLen = 361;
 		vrLoc = 1000;
 	};
-	5B9984A0139351AC0059AFA8 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
-		name = "ImageFetcher.m: 35";
-		rLen = 7;
-		rLoc = 560;
-		rType = 0;
-		vrLen = 531;
-		vrLoc = 368;
-	};
-	5B9984B01393B6870059AFA8 /* PBXTextBookmark */ = {
+	5B9984BF1393CDB50059AFA8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
 		name = "ImageFetcher.m: 57";
@@ -432,15 +412,35 @@
 		vrLen = 361;
 		vrLoc = 1000;
 	};
-	5B9984B11393B6870059AFA8 /* PBXTextBookmark */ = {
+	5B9984C01393CDB50059AFA8 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 5B674DF01391F35A00BEE756 /* ImageFetcher.m */;
-		name = "ImageFetcher.m: 35";
-		rLen = 7;
-		rLoc = 560;
+		name = "ImageFetcher.m: 41";
+		rLen = 0;
+		rLoc = 876;
 		rType = 0;
 		vrLen = 532;
 		vrLoc = 367;
+	};
+	5B9984C11393CDB50059AFA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
+		name = "TwitJustice.m: 103";
+		rLen = 0;
+		rLoc = 3386;
+		rType = 0;
+		vrLen = 681;
+		vrLoc = 2835;
+	};
+	5B9984C21393CDB50059AFA8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* TwitJustice.m */;
+		name = "TwitJustice.m: 106";
+		rLen = 0;
+		rLoc = 3393;
+		rType = 0;
+		vrLen = 681;
+		vrLoc = 2835;
 	};
 	5B9B44BD137FFDFB00D86CEE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
