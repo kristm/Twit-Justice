@@ -15,6 +15,8 @@
 		5B7807C61393E0D00046497B /* defaultpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7807C51393E0D00046497B /* defaultpic.png */; };
 		5B7808B71393FE4A0046497B /* twitjustice_logo.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5B7808B61393FE4A0046497B /* twitjustice_logo.icns */; };
 		5B7B61D613686EEF00997D0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */; };
+		5B91ED4C1397E33900E30AEA /* NSWindow_Flipr.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91ED4A1397E33900E30AEA /* NSWindow_Flipr.m */; };
+		5B91EDB61397E4A500E30AEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B91EDB51397E4A500E30AEA /* QuartzCore.framework */; };
 		5BBE671513900797001BBFC5 /* TwitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE671413900797001BBFC5 /* TwitView.m */; };
 		5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
 		5BC11EA5137D9CC800F8DEEC /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
@@ -69,6 +71,9 @@
 		5B7807C51393E0D00046497B /* defaultpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultpic.png; sourceTree = "<group>"; };
 		5B7808B61393FE4A0046497B /* twitjustice_logo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = twitjustice_logo.icns; sourceTree = "<group>"; };
 		5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5B91ED4A1397E33900E30AEA /* NSWindow_Flipr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSWindow_Flipr.m; sourceTree = "<group>"; };
+		5B91ED4B1397E33900E30AEA /* NSWindow_Flipr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSWindow_Flipr.h; sourceTree = "<group>"; };
+		5B91EDB51397E4A500E30AEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5BBE671313900797001BBFC5 /* TwitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitView.h; sourceTree = "<group>"; };
 		5BBE671413900797001BBFC5 /* TwitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitView.m; sourceTree = "<group>"; };
 		5BC11E95137D9CAA00F8DEEC /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 				5BF57DC2135B305100367132 /* BWToolkitFramework.framework in Frameworks */,
 				5B7B61D613686EEF00997D0D /* SystemConfiguration.framework in Frameworks */,
 				5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */,
+				5B91EDB61397E4A500E30AEA /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5B91ED4A1397E33900E30AEA /* NSWindow_Flipr.m */,
+				5B91ED4B1397E33900E30AEA /* NSWindow_Flipr.h */,
 				5B674DEF1391F35A00BEE756 /* ImageFetcher.h */,
 				5B674DF01391F35A00BEE756 /* ImageFetcher.m */,
 				256AC3D80F4B6AC300CF3369 /* TwitJustice.h */,
@@ -126,6 +134,7 @@
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				5B7B61D513686EEF00997D0D /* SystemConfiguration.framework */,
+				5B91EDB51397E4A500E30AEA /* QuartzCore.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 				5B6CB5041359BD2A002955AF /* TwitReader.m in Sources */,
 				5BBE671513900797001BBFC5 /* TwitView.m in Sources */,
 				5B674DF11391F35A00BEE756 /* ImageFetcher.m in Sources */,
+				5B91ED4C1397E33900E30AEA /* NSWindow_Flipr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

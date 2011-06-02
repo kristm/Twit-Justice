@@ -12,6 +12,7 @@
 #import "TwitJustice.h"
 #import "TwitReader.h"
 #import "ImageFetcher.h"
+#import "NSWindow_Flipr.h"
 
 @interface TwitJustice(Private)
 - (void) updateTwitSource:(NSArray *) favorites;
@@ -87,6 +88,7 @@
 
 		
 	}
+	[NSWindow flippingWindow];
 	[self startTwitJustice:@"starting"];
 
 }
@@ -306,6 +308,24 @@
 	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
 		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
 	}
+}
+
+#pragma mark Flipping Delegates
+// This action method is connected to the two "Flip" buttons.
+// In order to capture the buttons in the unhighlighted state, we do a delayed perform on the appropriate method.
+
+- (IBAction)flipAction:(id)sender {
+	[self performSelector:[NSApp keyWindow]==window?@selector(flipForward):@selector(flipBackward) withObject:nil afterDelay:0.0];
+}
+
+// These flip forward and backward. In the nib file, window1 is set as visible at load time, window2 not.
+
+- (void)flipForward {
+	[window flipToShowWindow:radioBack forward:YES];
+}
+
+- (void)flipBackward {
+	[radioBack flipToShowWindow:window forward:NO];
 }
 
 // window delegate
