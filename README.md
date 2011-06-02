@@ -6,6 +6,15 @@ A twitter app for the non-twitter user
 Twit Justice uses Mac OS X Speech Synthesis framework to "verbalize"
 tweet feeds.
 
+## System Requirements
+
+Intel Mac OS X 10.5 and later
+
+## Building from source
+
+Requires Xcode 3.* to build. 
+Xcode 4 does not support BWToolkit.
+
 ## License
 
 New BSD
