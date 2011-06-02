@@ -2,6 +2,9 @@
 //  TwitJustice.h
 //  TwitJustice
 //
+//  This code is free software; you can redistribute it and/or modify it under
+//  the terms of the new BSD License.
+//
 //  Created by Krist Menina on 4/16/11.
 //  Copyright 2011 Hello Wala Studios. All rights reserved.
 //
@@ -9,11 +12,6 @@
 #import <Cocoa/Cocoa.h>
 #import <BWToolkitFramework/BWToolkitFramework.h>
 
-
-//#import <Carbon/Carbon.h>
-//#import <unistd.h>
-//#import <sys/stat.h>
-//#import <fcntl.h>
 
 @interface TwitJustice : NSWindowController {
 @private

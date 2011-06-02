@@ -2,6 +2,9 @@
 //  TwitJustice.m
 //  TwitJustice
 //
+//  This code is free software; you can redistribute it and/or modify it under
+//  the terms of the new BSD License.
+//
 //  Created by Krist Menina on 4/16/11.
 //  Copyright 2011 Hello Wala Studios. All rights reserved.
 //
@@ -84,10 +87,6 @@
 
 		
 	}
-	//[favorites release];
-	//[voices release];
-	//[defaults release];
-	
 	[self startTwitJustice:@"starting"];
 
 }
@@ -104,39 +103,6 @@
 	}
 } 
 
-- (void) machineWillSleep:(NSNotification *)notification{
-	NSLog(@"TwitJustice sleep");
-	[queue cancelAllOperations];	
-
-}
-
-- (void) machineWillShutDown: (NSNotification *)notification{
-	NSLog(@"shutdown detected");
-	[queue cancelAllOperations];
-}
-
-- (void) machineDidWake:(NSNotification *)notification{
-	NSLog(@"TwitJustice wake");	
-	[self performSelector: @selector(startTwitJustice:)
-			   withObject:@"start from wake"
-			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];
-}
-
--(void)twitNotification:(NSNotification*)aNotification
-{
-	NSLog(@"notification from twitreader %@",[aNotification name]);
-	if ([[ aNotification name ] isEqualTo: @"NewTweet" ]) {
-		NSLog(@"show new tweet");
-		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
-	}else if([[ aNotification name ] isEqualTo: @"TweetError" ]) {
-		NSLog(@"error retrieving tweet");
-		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
-	}else if ([[ aNotification name] isEqualTo:@"OkNet"]) {
-		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
-	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
-		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
-	}
-}
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex
 {
@@ -166,7 +132,6 @@
 		[_statusItem setHighlightMode:YES];
 		[_statusItem setEnabled:YES];				
 		[_statusItem setMenu:menuItemMenu];		
-		//[img release];						
 	}
 	return _statusItem;
 }
@@ -215,17 +180,11 @@
 	NSString *listening_to_label = [[[NSString alloc] init] autorelease];
 	listening_to_label = [[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"];
 
-//	[[twitSourceMenu itemWithTitle:listening_to_label] setState:0];
-//		
 	[[NSUserDefaults standardUserDefaults] setValue:[sender titleOfSelectedItem] forKey:@"twitSource"];
-//	[[twitSourceMenu itemWithTitle:[sender titleOfSelectedItem]] setState:1];
 	
 	//update menu bar twit source label
 	NSLog(@"update twit source in menu %@",[sender titleOfSelectedItem]);	
 	[self performSelector:@selector(updateMenuTwitSource:) withObject:[sender titleOfSelectedItem]];
-	//[radioTweetSource setStringValue:[sender titleOfSelectedItem]];
-	
-//	[listening_to_label release];
 }
 
 - (void) updateMenuTwitSource: (NSString *)username
@@ -243,19 +202,10 @@
 	[radioTweet setStringValue:@"waiting for next tweet"];
 	
 	//update preferences control
-	//[twitSource selectItemWithTitle:[sender title]];
 	[[NSUserDefaults standardUserDefaults] setValue:username forKey:@"twitSource"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	NSLog(@"new source %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);
 	
-	//update tweet profile image in ui ... this could just be a bg process
-	/*NSImage *twitSourceImg = [[NSImage alloc] initWithContentsOfURL:
-							  [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]]];
-	
-	NSLog(@"image %@ %@",[NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image/%@.json?size=bigger",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]]],twitSourceImg);
-	if (twitSourceImg != nil) {
-		[radioThumb setImage:twitSourceImg];
-	}*/
 	ImageFetcher* imgFetch = [[ImageFetcher alloc] init:radioThumb];
 	[queue addOperation:imgFetch];
 	[imgFetch release];
@@ -320,7 +270,46 @@
 	[super dealloc];	
 }
 
+#pragma mark notifications
+
+- (void) machineWillSleep:(NSNotification *)notification{
+	NSLog(@"TwitJustice sleep");
+	[queue cancelAllOperations];	
+	
+}
+
+- (void) machineWillShutDown: (NSNotification *)notification{
+	NSLog(@"shutdown detected");
+	[queue cancelAllOperations];
+}
+
+- (void) machineDidWake:(NSNotification *)notification{
+	NSLog(@"TwitJustice wake");	
+	[self performSelector: @selector(startTwitJustice:)
+			   withObject:@"start from wake"
+			   afterDelay:[[NSUserDefaults standardUserDefaults] integerForKey:@"snapshotDelay"]];
+}
+
+-(void)twitNotification:(NSNotification*)aNotification
+{
+	NSLog(@"notification from twitreader %@",[aNotification name]);
+	if ([[ aNotification name ] isEqualTo: @"NewTweet" ]) {
+		NSLog(@"show new tweet");
+		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];
+		[radioTweet display];
+	}else if([[ aNotification name ] isEqualTo: @"TweetError" ]) {
+		NSLog(@"error retrieving tweet");
+		[radioTweet setStringValue:[[aNotification userInfo] objectForKey:@"message"]];		
+		[radioTweet display];
+	}else if ([[ aNotification name] isEqualTo:@"OkNet"]) {
+		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
+	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
+		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
+	}
+}
+
 // window delegate
+#pragma mark Window Delegates
 
 - (BOOL)windowShouldClose:(id)sender
 {
@@ -362,9 +351,7 @@
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSDictionary *infoDict = [mainBundle infoDictionary];
 	
-    //NSString *mainString = [infoDict valueForKey:@"CFBundleShortVersionString"];
     NSString *subString = [infoDict valueForKey:@"CFBundleVersion"];
-    //return [NSString stringWithFormat:@"Version %@ (%@)", mainString, subString];
 	return [NSString stringWithFormat:@"Version %@", subString];
 }
 

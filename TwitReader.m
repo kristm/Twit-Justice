@@ -2,6 +2,9 @@
 //  TwitReader.m
 //  TwitJustice
 //
+//  This code is free software; you can redistribute it and/or modify it under
+//  the terms of the new BSD License.
+//
 //  Created by Krist Menina on 4/16/11.
 //  Copyright 2011 Hello Wala Studios. All rights reserved.
 //
@@ -48,7 +51,6 @@
 		NSLog(@"use voice %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"voice"]);
 		NSLog(@"twit source: %@",[[NSUserDefaults standardUserDefaults] stringForKey:@"twitSource"]);	
 		NSLog(@"interval: %d",tjInterval);
-		//NSLog(@"last tweet %d",lastTweet == nil);
 		if([self isConnected]){
 			NSDictionary *menuTitle = [NSDictionary dictionaryWithObject:@"Listening to" forKey:@"message"];
 			[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"OkNet" object:@"TwitReader" userInfo:menuTitle];
@@ -157,8 +159,6 @@
 			
 		}
 	}
-	//[data release];
-	//[status release];
 	
 }
 
