@@ -127,10 +127,12 @@
 {
 	if (_statusItem == nil)
 	{
-		NSImage *img;				
+		NSImage *img,*alt_img;				
 		img = [NSImage imageNamed:@"twitjustice"];
+		alt_img = [NSImage imageNamed:@"twitjustice_alt"];
 		_statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[_statusItem setImage:img];
+		[_statusItem setAlternateImage:alt_img];
 		[_statusItem setHighlightMode:YES];
 		[_statusItem setEnabled:YES];				
 		[_statusItem setMenu:menuItemMenu];		
