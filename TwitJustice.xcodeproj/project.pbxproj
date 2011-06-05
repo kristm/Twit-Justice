@@ -18,6 +18,7 @@
 		5B91ED4C1397E33900E30AEA /* NSWindow_Flipr.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91ED4A1397E33900E30AEA /* NSWindow_Flipr.m */; };
 		5B91EDB61397E4A500E30AEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B91EDB51397E4A500E30AEA /* QuartzCore.framework */; };
 		5B97DD23139A508200363661 /* twitjustice_alt.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B97DD22139A508200363661 /* twitjustice_alt.tiff */; };
+		5B9A2D93139B249500AF4DE2 /* twitjustice-defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A2D92139B249500AF4DE2 /* twitjustice-defaults.plist */; };
 		5BBE671513900797001BBFC5 /* TwitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE671413900797001BBFC5 /* TwitView.m */; };
 		5BC0F98A139A3EF2003DA5D6 /* btn_info2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BC0F989139A3EF2003DA5D6 /* btn_info2.png */; };
 		5BC11E96137D9CAA00F8DEEC /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC11E95137D9CAA00F8DEEC /* YAJL.framework */; };
@@ -79,6 +80,7 @@
 		5B91ED4B1397E33900E30AEA /* NSWindow_Flipr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSWindow_Flipr.h; sourceTree = "<group>"; };
 		5B91EDB51397E4A500E30AEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B97DD22139A508200363661 /* twitjustice_alt.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = twitjustice_alt.tiff; sourceTree = "<group>"; };
+		5B9A2D92139B249500AF4DE2 /* twitjustice-defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "twitjustice-defaults.plist"; sourceTree = "<group>"; };
 		5BBE671313900797001BBFC5 /* TwitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitView.h; sourceTree = "<group>"; };
 		5BBE671413900797001BBFC5 /* TwitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitView.m; sourceTree = "<group>"; };
 		5BC0F989139A3EF2003DA5D6 /* btn_info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_info2.png; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				5B6CB4CA135968F2002955AF /* twitjustice.tiff */,
 				5B7808B61393FE4A0046497B /* twitjustice_logo.icns */,
 				8D1107310486CEB800E47090 /* TwitJustice-Info.plist */,
+				5B9A2D92139B249500AF4DE2 /* twitjustice-defaults.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 			);
@@ -267,6 +270,7 @@
 				5BDF0FEC139A3BC60089CEC8 /* btn_info.png in Resources */,
 				5BC0F98A139A3EF2003DA5D6 /* btn_info2.png in Resources */,
 				5B97DD23139A508200363661 /* twitjustice_alt.tiff in Resources */,
+				5B9A2D93139B249500AF4DE2 /* twitjustice-defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
