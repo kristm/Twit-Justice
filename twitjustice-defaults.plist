@@ -6,12 +6,6 @@
     <array>
         <dict>
             <key>username</key>
-            <string>sarrahsworld</string>
-            <key>description</key>
-            <string>Sarah Abdelrahman</string>
-        </dict>
-        <dict>
-            <key>username</key>
             <string>danlevitin</string>
             <key>description</key>
             <string>Dan Levitin</string>
@@ -21,6 +15,12 @@
             <string>lovipoe</string>
             <key>description</key>
             <string>Lovi Poe</string>
+        </dict>
+        <dict>
+            <key>username</key>
+            <string>sarrahsworld</string>
+            <key>description</key>
+            <string>Sarah Abdelrahman</string>
         </dict>
         <dict>
             <key>username</key>

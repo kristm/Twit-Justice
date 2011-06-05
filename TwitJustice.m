@@ -87,7 +87,7 @@
 		}
 
 		
-	}else {
+	}else if([self getFavorites] == nil){
 		// use default twitter feeds
 		NSLog(@"use default twitter feeds");		
 		NSDictionary *default_twits = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitjustice-defaults" ofType:@"plist"]];
