@@ -12,6 +12,7 @@
 #import "TwitJustice.h"
 #import "TwitReader.h"
 #import "ImageFetcher.h"
+#import "NSWindow_Flipr.h"
 
 @interface TwitJustice(Private)
 - (void) updateTwitSource:(NSArray *) favorites;
@@ -86,7 +87,31 @@
 		}
 
 		
+	}else if([self getFavorites] == nil){
+		// use default twitter feeds
+		NSLog(@"use default twitter feeds");		
+		NSDictionary *default_twits = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitjustice-defaults" ofType:@"plist"]];
+		NSArray *default_favorites = [default_twits valueForKey:@"defaults"];
+		/*NSEnumerator *e = [default_favorites objectEnumerator];
+		NSDictionary *fav;
+		while( fav = (NSDictionary *)[e nextObject] )
+		{
+			NSLog(@"favies %@",[fav valueForKey:@"Username"]);
+			//[favRecords addObject:[NSDictionary dictionaryWithObjectsAndKeys:<#(id)firstObject#>
+		}*/
+		[favRecords setArray:default_favorites];
+		[favList reloadData];
+		[self updateTwitSource:default_favorites];
+		
+		NSLog(@"default firt value %@",[[default_favorites objectAtIndex:0] valueForKey:@"username"]);
+		NSString *first_twit = [[NSString alloc] autorelease];
+		first_twit = [[default_favorites objectAtIndex:0] valueForKey:@"username"];
+		[twitSource selectItemWithTitle:first_twit];
+		[self performSelector:@selector(updateMenuTwitSource:) withObject:first_twit];		
+		[[NSUserDefaults standardUserDefaults] setValue:favRecords forKey:@"favorites"];
 	}
+
+	[NSWindow flippingWindow];
 	[self startTwitJustice:@"starting"];
 
 }
@@ -125,10 +150,12 @@
 {
 	if (_statusItem == nil)
 	{
-		NSImage *img;				
+		NSImage *img,*alt_img;				
 		img = [NSImage imageNamed:@"twitjustice"];
+		alt_img = [NSImage imageNamed:@"twitjustice_alt"];
 		_statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
 		[_statusItem setImage:img];
+		[_statusItem setAlternateImage:alt_img];
 		[_statusItem setHighlightMode:YES];
 		[_statusItem setEnabled:YES];				
 		[_statusItem setMenu:menuItemMenu];		
@@ -306,6 +333,24 @@
 	}else if ([[ aNotification name] isEqualTo:@"NoNet"]) {
 		[statusInfo setTitle:[[aNotification userInfo] objectForKey:@"message"]];
 	}
+}
+
+#pragma mark Flipping Delegates
+// This action method is connected to the two "Flip" buttons.
+// In order to capture the buttons in the unhighlighted state, we do a delayed perform on the appropriate method.
+
+- (IBAction)flipAction:(id)sender {
+	[self performSelector:[NSApp keyWindow]==window?@selector(flipForward):@selector(flipBackward) withObject:nil afterDelay:0.0];
+}
+
+// These flip forward and backward. In the nib file, window1 is set as visible at load time, window2 not.
+
+- (void)flipForward {
+	[window flipToShowWindow:radioBack forward:YES];
+}
+
+- (void)flipBackward {
+	[radioBack flipToShowWindow:window forward:NO];
 }
 
 // window delegate

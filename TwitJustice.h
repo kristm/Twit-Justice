@@ -52,6 +52,7 @@
 - (IBAction) selectedTwitSource: (id) sender;
 - (IBAction) setVoice:(id) sender;
 - (IBAction) aboutWindowController: (id) sender;
+- (IBAction)flipAction:(id)sender;
 
 - (void)twitNotification:(NSNotification*)aNotification;
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex;
