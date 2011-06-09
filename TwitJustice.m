@@ -92,13 +92,6 @@
 		NSLog(@"use default twitter feeds");		
 		NSDictionary *default_twits = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"twitjustice-defaults" ofType:@"plist"]];
 		NSArray *default_favorites = [default_twits valueForKey:@"defaults"];
-		/*NSEnumerator *e = [default_favorites objectEnumerator];
-		NSDictionary *fav;
-		while( fav = (NSDictionary *)[e nextObject] )
-		{
-			NSLog(@"favies %@",[fav valueForKey:@"Username"]);
-			//[favRecords addObject:[NSDictionary dictionaryWithObjectsAndKeys:<#(id)firstObject#>
-		}*/
 		[favRecords setArray:default_favorites];
 		[favList reloadData];
 		[self updateTwitSource:default_favorites];
